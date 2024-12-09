@@ -345,6 +345,8 @@ body.botao-ativado #btnAtivarLeitura{
     background-color: #007bff2c;
 }
 
+
+
 #menu-acessibilidade button:hover{
     transform: scale(1.05);
     transition: .5s;
