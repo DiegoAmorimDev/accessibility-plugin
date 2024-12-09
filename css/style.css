@@ -1,0 +1,569 @@
+/* ===== Estilo Geral ===== */
+html {
+    height: 500vh;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    font-size: 100%; /* Base de 16px */
+}
+
+body {
+    font-size: 1rem; /* 1rem = 16px */
+    color: #333;
+    background-color: #fff;
+    line-height: 1.6;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* ===== Cabeçalho ===== */
+header {
+    width: 100%;
+    padding: 1.6667rem 0.2222rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+    z-index: 2000;
+}
+
+header.rolagem {
+    background-color: rgba(0, 0, 0, 0.288);
+    padding: 0 0.2222rem;
+}
+
+.flexheader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header ul {
+    list-style: none;
+}
+
+header ul li {
+    display: inline-block;
+    margin: 0 2.2222rem;
+    transition: 0.3s;
+}
+
+header ul li:hover {
+    border-bottom: 4px solid aqua;
+    transform: scale(1.1);
+}
+
+header ul li a {
+    color: aqua;
+    text-decoration: none;
+}
+
+/* ===== Logo ===== */
+#logomundogelado {
+    width: 4.4444rem;
+    float: left;
+    border-radius: 50%;
+}
+
+/* ===== Container ===== */
+.container {
+    max-width: 1280px;
+    margin: auto;
+}
+
+/* ===== Botões ===== */
+.btn-contato button, 
+.btn-cardapio button {
+    padding: 0.5556rem;
+    background-color: aqua;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    border: 0;
+    width: 120px;
+    height: 40px;
+    transition: 0.3s;
+    font-family: 'Lucida Sans', sans-serif;
+    border-radius: 10px;
+}
+
+.btn-contato button:hover, 
+.btn-cardapio button:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 0.2778rem aqua;
+}
+
+/* ===== Seção Topo do Site ===== */
+section.topo-do-site {
+    background-image: linear-gradient(rgba(29, 29, 29, 0.5), rgba(29, 29, 29, 0.5)), 
+                      url(../img/lama-roscu-Wpg3Qm0zaGk-unsplash.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+section.topo-do-site .flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 13.8889rem;
+}
+
+.txt-topo-site {
+    margin-top: 16.6667rem;
+}
+
+section.topo-do-site .flex .txt-topo-site h1 {
+    font-size: 2.7778rem;
+    font-family: "Caveat", cursive;
+    padding: 0.8333rem;
+    text-transform: uppercase;
+    color: rgb(0, 234, 255);
+    font-weight: bold;
+}
+
+section.topo-do-site .flex .txt-topo-site p {
+    font-size: 1.1111rem;
+    padding: 15px;
+    color: white;
+}
+
+/* ===== Ondas ===== */
+section.ondas-box {
+    position: relative;
+    width: 100%;
+    height: 55.5556rem;
+}
+
+.onda {
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    background-image: url(../img/onda.png);
+    background-size: 1000px 100px;
+    animation: ondaAnimada 5s ease-in-out infinite alternate;
+}
+
+@keyframes ondaAnimada {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(10px); }
+}
+
+#onda1 {
+    z-index: 110;
+    opacity: 1;
+    background-position-x: 400px;
+}
+
+#onda2 {
+    z-index: 109;
+    opacity: 0.5;
+    background-position-x: 300px;
+}
+
+#onda3 {
+    z-index: 108;
+    opacity: 0.2;
+    background-position-x: 200px;
+}
+
+#onda4 {
+    z-index: 107;
+    opacity: 0.8;
+    background-position-x: 100px;
+}
+
+/* ===== Sobre ===== */
+section.sobre .title-about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section.sobre .title-about h1 {
+    font-size: 2.7778rem;
+    font-family: "Caveat", cursive;
+    padding: 15px;
+    text-transform: uppercase;
+    color: rgb(0, 234, 255);
+    font-weight: bold;
+}
+
+section.sobre #img1-sobre,
+section.sobre #img2-sobre {
+    width: 400px;
+    padding: 15px 4%;
+    border-radius: 90px;
+    animation: ondaAnimada 5s ease-in-out infinite alternate;
+}
+
+section.sobre p {
+    font-size: 1.6667rem;
+    font-family: 'Gill Sans', sans-serif;
+    padding: 15px 4%;
+    margin-top: 60px;
+    text-decoration: none;
+}
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: aqua;
+    border-radius: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  acessibilidade */
+
+/* ===== Contraste Alto ===== */
+
+body.high-contrast {
+    background-color: #000000;
+    color: #fff;
+}
+
+body.high-contrast p{
+    color: #00ff00
+}
+
+body.high-contrast a {
+    color: #00ff00; /* Links com contraste */
+}
+
+.high-contrast button {
+    background-color: #fff;
+    color: #000;
+}
+
+/* Contraste negativo */
+body.negative-contrast {
+    background-color: #000000;
+    color: #fff;
+}
+
+body.negative-contrast p{
+    color: #FFFB00
+}
+
+body.negative-contrast a {
+    color: #FFFB00; /* Links com contraste */
+}
+
+.negative-contrast button {
+    background-color: #fff;
+    color: #000;
+}
+
+
+
+.accessibility-bar button {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    font-size: 1rem;
+}
+
+.accessibility-bar button:hover {
+    background-color: #ddd;
+}
+
+
+.btn-acessibilidade .btnAccess{
+    position: fixed;
+    top: 120px;
+    left: 20px;
+    width: 40px; /* Largura fixa para garantir o formato circular */
+    height: 40px; /* Altura igual à largura */
+    padding: 0; /* Remova o padding para evitar distorções */
+    background-color: #007bff;
+    color: #fff;
+    border: 10px solid;
+    border-color: #007bff;
+    border-radius: 20%; /* Define o formato circular */
+    cursor: pointer;
+    font-size: 18px;
+    display: flex; /* Centraliza o conteúdo do botão */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    z-index: 1001;
+}
+
+#btnAccess i:hover{
+    transform: scale(1.10);
+    transition: .5s;
+}
+
+
+.btn-acessibilidade i{
+    font-size: 40px;
+}
+
+.menu-acessibilidade {
+    position: fixed;
+    top: 190px;
+    left: 20px;
+    background-color: #ffffff;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    display: block;
+    gap: 10px;
+    z-index: 1000;
+}
+
+/* Botões dentro do menu */
+.menu-acessibilidade button {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #000000;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1rem
+}
+
+body.botao-ativado #btnAtivarLeitura{
+    background-color: #007bff2c;
+}
+
+#menu-acessibilidade button:hover{
+    transform: scale(1.05);
+    transition: .5s;
+    background-color: #007bff;
+    color: #fff;
+}
+
+#menu-acessibilidade button:hover i{
+    color: white;
+}
+
+ /* escala de cinza */
+
+ body.tons-cinza{
+    filter: grayscale(100%);
+}
+
+body.tons-cinza .menu-acessibilidade{
+    position: fixed
+}
+
+.block #menu-acessibilidade button {
+    display: block
+}
+
+#GrayScale{
+    color: black;
+}
+
+/* links sublinhados */
+
+body.link-sub a{
+    text-decoration: underline;
+    text-decoration-color: #ff0000;
+    text-decoration-line: 40px;
+}
+
+body.link-sub button{
+    text-decoration: underline;
+    text-decoration-color: #ff0000;
+    text-decoration-line: 40px;
+}
+
+/* Fonte Legivel */
+
+body.font-leg p{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 50;
+}
+
+body.font-leg h1{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif !important;
+    font-weight: 100;
+}
+
+body.font-leg button{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif !important;
+}
+
+/* caixa de mensagem */
+
+.messageBoxAccess{
+    position: absolute;
+    top: 10px;
+    left: 60px;
+    width: 20rem;
+    background-color: #ffffff;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 0 10px 10px;
+    display: none;
+    gap: 10px;
+    z-index: 1000;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.btn-acessibilidade:hover .messageBoxAccess {
+    display: block;
+    animation: float 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes float {
+    0%{
+        top: 0;
+    }
+    100%{
+        top: 10px;
+    }
+}
+
+/* botao exit display none */
+
+#button-exit{
+    display: none;
+}
+
+/* responsividade */
+
+@media screen and (max-width: 700px) {
+    .messageBoxAccess{
+        position: absolute;
+        top: 10px;
+        left: 60px;
+        width: 10rem;
+        background-color: #ffffff;
+        padding: 15px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 0 10px 10px;
+        display: none;
+        gap: 10px;
+        z-index: 1000;
+        color: black;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .block{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .bloco-funcoes button{
+        width: 9rem;
+        height: 6rem;
+        background-color: #ffffff;
+        margin: 20px;
+        border-radius: 20px;
+    }
+
+ 
+
+    .menu-acessibilidade {
+        position: fixed; 
+        top: 80px; 
+        width: 100vw; 
+        height: 90vh; 
+        background-color: #EFF1F5; 
+        box-shadow: none; 
+        display: flex; 
+        justify-content: center;
+        align-items: center;
+        z-index: 1000; 
+        max-width: 340px;
+        border-radius: 20px;
+    }
+
+    .btn-acessibilidade .btnAccess{
+        position: fixed;
+        top: 150px;
+        width: 40px; 
+        height: 40px;
+        padding: 0; 
+        background-color: #007bff;
+        color: #fff;
+        border: 10px solid;
+        border-color: #007bff;
+        border-radius: 20%;
+        cursor: pointer;
+        font-size: 18px;
+        display: flex; 
+        align-items: center;
+        justify-content: center; 
+        z-index: 1001;
+        transition: .5s;
+    }
+
+    .bloco-funcoes{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    body.menu-ativado  .btn-acessibilidade .btnAccess{
+        position: fixed;
+        top: 20px;
+        z-index: 11100;
+    }
+
+    body.menu-ativado .menu-acessibilidade{
+        z-index: 10000; 
+        border: 3px solid;
+        border-color: #0d99ff;
+    }
+
+    body.menu-ativado #button-exit{
+        position: fixed;
+        top: 90px;
+        right: 4.5rem;
+        width: 40px; 
+        height: 40px;
+        padding: 0; 
+        cursor: pointer;
+        font-size: 2rem;
+        display: flex; 
+        align-items: center;
+        justify-content: center; 
+        z-index: 11000;
+        transition: .5s;
+        color: #007bff;
+    }
+
+    .funcoes-box button {
+        display: flex; 
+        flex-direction: column; 
+        align-items: center;
+        justify-content: center; 
+        text-align: center; 
+        padding: 10px; 
+        font-size: 14px;
+        border: none; 
+        cursor: pointer; 
+    }
+    
+    .funcoes-box i {
+        font-size: 24px;
+        margin-bottom: 5px;
+        display: block; 
+    }
+    
+
+}

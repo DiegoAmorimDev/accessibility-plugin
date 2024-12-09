@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sorveteria mundo gelado - home</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+</head>
+<header id="header">
+    <div class="interface">
+        <div class="container">
+
+            
+
+            <div class="flexheader">
+
+                <a href="index.html"><img id="logomundogelado" src="img/testesda-transformed.jpeg" alt="mundo-gelado"></a>
+
+                <nav>
+                    <ul>
+                        <li><a href="#inicio">HOME</a></li>
+                        <li><a href="#sobre-mim">SOBRE</a></li>
+                        <li><a href="#">CARDÁPIO</a></li>
+                        <li><a href="#">PROMOÇÕES</a></li>
+                    </ul>
+                </nav>
+
+                <div class="btn-contato">
+                    <a target="_blank" href="https://api.whatsapp.com/send/?phone=5591988973357"><button>CONTATO</button></a>
+                </div>
+
+
+            </div><!--flex-->
+
+        </div><!--final div container-->
+    </div>
+</header>
+
+
+
+<body>
+
+
+    <section class="topo-do-site" id="inicio">
+
+           
+            <button id="btn-acessibilidade" class="btn-acessibilidade">
+                <div class="btnAccess" id="btnAccess">
+                    <div class="messageBoxAccess" id="messageBoxAccess">
+                        <p>Olá, eu sou o menu da uepa acessível. <br> Eu tenho muitos recursos assistivos, caso precise de mim, estarei aqui!</p>
+                    </div>
+                    <i class="bi bi-universal-access-circle"></i>
+
+                    <i class="bi bi-box-arrow-left" id="button-exit"></i>
+                </div>
+            </button>
+
+            
+            <div class="block">
+                <div id="menu-acessibilidade" class="menu-acessibilidade" style="display: none;">
+                    <p>Uepa Acessível</p>
+
+                    <div class="bloco-funcoes">
+                        <div class="funcoes-box">
+                            <button onclick="toggleHighContrast()"> <i class="bi bi-circle-half"></i> Alto Contraste</button>
+                        </div>
+                        <div class="funcoes-box">
+                            <button onclick="toggleNegativeContrast()"> <i class="bi bi-eye-fill"></i></i>Contraste Negativo</button>
+                        </div>
+                    </div>
+                    
+                        <div class="bloco-funcoes">
+                            <div class="funcoes-box">
+                                <button onclick="increaseFontSize()"> <i class="bi bi-zoom-in"></i> Aumentar Fonte </button>
+                            </div>
+                            <div class="funcoes-box">
+                                <button onclick="decreaseFontSize()"> <i class="bi bi-zoom-out"></i> Diminuir Fonte</button>
+                            </div>
+                        </div>
+
+                    <div class="bloco-funcoes">
+                        <div class="funcoes-box">
+                            <button id="toggleGrayButton" onclick="toggleGrayScale()"> <i id="GrayScale" class="bi bi-upc"></i> Escala de cinza</button>
+                        </div>
+                        <div class="funcoes-box">
+                            <button onclick="toggleLinkSub()"> <i class="bi bi-link"></i> Links Sublinhados</button>
+                        </div>
+                    </div>
+
+                    <div class="bloco-funcoes">
+                        <div class="funcoes-box">
+                            <button onclick="toggleFontLeg()"> <i class="bi bi-file-font"></i> Fonte Legível</button>
+                        </div>
+                        <div class="funcoes-box">
+                            <button id="btnAtivarLeitura"> <i class="bi bi-soundwave"></i> Leia a página</button>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+
+        <div class="overlay-menu" id="overlay-menu"></div>
+        
+        <div class="interface">
+
+            
+
+            <div class="flex">
+                <div class="txt-topo-site">
+                    <h1>Transformando sabores em sentimentos! </h1>
+                    <p>Em um mundo onde cada colherada é uma aventura e cada sabor uma história, 
+                        nós da Sorveteria Mundo Gelado estamos aqui para transformar seus momentos 
+                        em verdadeiros deleites gelados! </p>
+
+                        <div class="btn-cardapio">
+                            <a href="#"><button class="cardápiobtn">Veja o cardápio</button></a>
+                        </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="onda" id="onda1"></div>
+        <div class="onda" id="onda2"></div>
+        <div class="onda" id="onda3"></div>
+        <div class="onda" id="onda4"></div>
+    </section>
+
+<section class="sobre" id="sobre-mim">
+    <div class="interface">
+        <div class="title-about">
+            <h1>SOBRE NÓS</h1>
+        </div>
+        <div class="flex">
+            <img id="img1-sobre" src="img/courtney-cook-QYsRxRPygwU-unsplash.jpg" alt="">
+            <p>Bem-vindo ao Mundo Gelado, o paraíso congelado no coração de Belém do Pará! Desde sua inauguração em dezembro de 2019, temos sido o destino preferido dos amantes de sorvete na região, oferecendo uma experiência única de sabor e diversão para toda a família.</p>
+            
+        </div>
+    </div>
+    <div class="interface">
+        <div class="flex">
+
+            <p>Na Mundo Gelado, somos apaixonados por criar momentos memoráveis, onde cada colherada é uma viagem sensorial através de deliciosos sabores e texturas. Nossos sorvetes são artesanais, preparados com ingredientes frescos e naturais, capturando os sabores autênticos da Amazônia e além. De frutas exóticas a clássicos reconfortantes, há uma opção para satisfazer todos os paladares.</p>
+
+            <img id="img2-sobre" src="img/erwan-hesry-OlQ-NaEyVmQ-unsplash.jpg" alt="">
+
+
+        </div>
+    </div>
+</section>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
