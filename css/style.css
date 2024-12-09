@@ -564,6 +564,12 @@ body.font-leg button{
         margin-bottom: 5px;
         display: block; 
     }
+
+    .messageBoxFinal{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
     
 
 }
