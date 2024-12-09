@@ -1,23 +1,33 @@
-window.addEventListener('scroll', function(){
-    let header = document.querySelector('#header')
-    header.classList.toggle('rolagem',window.scrollY > 0)
-})
+// Função de integração para iOS
+window.addEventListener('scroll', function () {
+    let header = document.querySelector('#header');
+    header.classList.toggle('rolagem', window.scrollY > 0);
+});
 
-var onda1 = document.getElementById('onda1')
-var onda2 = document.getElementById('onda2')
-var onda3 = document.getElementById('onda3')
-var onda4 = document.getElementById('onda4')
+var onda1 = document.getElementById('onda1');
+var onda2 = document.getElementById('onda2');
+var onda3 = document.getElementById('onda3');
+var onda4 = document.getElementById('onda4');
 
-window.addEventListener('scroll', function(){
-    var rolagemPos = window.scrollY
+window.addEventListener('scroll', function () {
+    var rolagemPos = window.scrollY;
 
-    onda1.style.backgroundPositionX = 400 + rolagemPos * 2 + 'px'
-    onda2.style.backgroundPositionX = 300 + rolagemPos * -2 + 'px'
-    onda3.style.backgroundPositionX = 200 + rolagemPos * 1 + 'px'
-    onda4.style.backgroundPositionX = 100 + rolagemPos * -1 + 'px'
-})
+    onda1.style.backgroundPositionX = 400 + rolagemPos * 2 + 'px';
+    onda2.style.backgroundPositionX = 300 + rolagemPos * -2 + 'px';
+    onda3.style.backgroundPositionX = 200 + rolagemPos * 1 + 'px';
+    onda4.style.backgroundPositionX = 100 + rolagemPos * -1 + 'px';
+});
 
-
+// Adicionando integração para capturar gestos e texto selecionado no iOS
+document.addEventListener('selectionchange', () => {
+    if (leituraAtivada) {
+        const selection = window.getSelection();
+        const textoSelecionado = selection ? selection.toString().trim() : '';
+        if (textoSelecionado) {
+            lerTexto(textoSelecionado);
+        }
+    }
+});
 
 document.addEventListener('DOMContentLoaded', () => {
     // Seleciona os botões
@@ -28,9 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const toggleLinkSubButton = document.getElementById('toggle-Link');
     const toggleFontLegButton = document.getElementById('font-legi');
     const toggleGrayScale = document.getElementById('toggleGrayButton');
-    const buttonExit = document.getElementById('button-exit');
-    
-    
 
     // Define o tamanho de fonte padrão
     let fontSize = 100; // Percentual base (100% = 16px)
@@ -44,8 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
             document.documentElement.style.fontSize = `${fontSize}%`;
         }
     });
-
-    
 
     // Diminuir fonte
     decreaseFontButton.addEventListener('click', () => {
@@ -61,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     toggleLinkSubButton.addEventListener('click', () => {
-        document.body.classList.toggle('link-sub')
+        document.body.classList.toggle('link-sub');
     });
 
     toggleNContrastButton.addEventListener('click', () => {
@@ -69,21 +74,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     toggleFontLegButton.addEventListener('click', () => {
-        document.body.classList.toggle('font-leg')
+        document.body.classList.toggle('font-leg');
     });
 
-     // Tons de cinza
-     toggleGrayScale.addEventListener('click', () => {
+    // Tons de cinza
+    toggleGrayScale.addEventListener('click', () => {
         document.body.classList.toggle('tons-cinza');
     });
-
-    
 });
 
-
-document.getElementById('btn-acessibilidade').addEventListener('click', function() {
+document.getElementById('btn-acessibilidade').addEventListener('click', function () {
     const menu = document.getElementById('menu-acessibilidade');
-    const messageDisappear = document.getElementById('messageBoxAccess')
+    const messageDisappear = document.getElementById('messageBoxAccess');
     menu.style.display = (menu.style.display === 'none' || menu.style.display === '') ? 'block' : 'none';
     messageDisappear.style.display = (messageDisappear.style.display === 'none' || menu.style.display === '') ? 'none' : 'none';
     document.body.classList.toggle('menu-ativado');
@@ -127,51 +129,38 @@ function toggleFontLeg() {
     synth.cancel();
 }
 
+const synth = window.speechSynthesis;
 
-        const synth = window.speechSynthesis;
+let leituraAtivada = false;
 
-        
-        function lerTexto(texto) {
-            synth.cancel();
-            const utterance = new SpeechSynthesisUtterance(texto);
-            utterance.lang = 'pt-BR'; 
-            synth.speak(utterance);
+function lerTexto(texto) {
+    synth.cancel();
+    const utterance = new SpeechSynthesisUtterance(texto);
+    utterance.lang = 'pt-BR';
+    synth.speak(utterance);
+}
+
+document.getElementById('btnAtivarLeitura').addEventListener('click', () => {
+    document.body.classList.toggle("botao-ativado");
+    leituraAtivada = !leituraAtivada;
+    synth.cancel();
+    const botao = document.getElementById('btnAtivarLeitura');
+    botao.innerHTML = `
+        <i class="bi bi-soundwave"></i> 
+        ${leituraAtivada ? "Desativar Leitura" : "Ativar Leitura"}
+    `;
+    if (leituraAtivada) {
+        lerTexto("A leitura foi ativada. Feche o menu de acessibilidade e selecione um texto para começar.");
+    } else {
+        lerTexto("A leitura foi desativada.");
+    }
+});
+
+document.addEventListener('mouseup', () => {
+    if (leituraAtivada) {
+        const textoSelecionado = window.getSelection().toString().trim();
+        if (textoSelecionado) {
+            lerTexto(textoSelecionado);
         }
-
-        document.getElementById('btnAtivarLeitura').addEventListener('click', () => {
-            document.body.classList.toggle("botao-ativado")
-            leituraAtivada = !leituraAtivada; 
-            synth.cancel();
-            const botao = document.getElementById('btnAtivarLeitura');
-            botao.innerHTML = `
-                <i class="bi bi-soundwave"></i> 
-                ${leituraAtivada ? "Desativar Leitura" : "Ativar Leitura"}
-            `; // Atualiza o texto do botão mantendo o ícone
-        
-            if (leituraAtivada) {
-                lerTexto("A leitura foi ativada. Feche o menu de acessibilidade e selecione um texto para começar.");
-            } else {
-                lerTexto("A leitura foi desativada.");
-            }
-        });
-        
-        document.addEventListener('mouseup', () => {
-            if (leituraAtivada) { // Verifica se a leitura está ativada
-                const textoSelecionado = window.getSelection().toString().trim();
-                if (textoSelecionado) {
-                    lerTexto(textoSelecionado);
-                }
-            }
-        });
-        
-        function lerTexto(texto) {
-            synth.cancel(); // Cancela qualquer fala em andamento
-            const utterance = new SpeechSynthesisUtterance(texto);
-            utterance.lang = 'pt-BR'; // Configura o idioma para português do Brasil
-            synth.speak(utterance);
-        }
-        
-
-
-
-
+    }
+});
