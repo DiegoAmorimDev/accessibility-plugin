@@ -1,0 +1,731 @@
+/* config geral */
+
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.accessibility-bar button {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #000000;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1rem
+}
+
+.accessibility-bar button:hover {
+    background-color: #ffffff;
+}
+
+
+.btn-acessibilidade .btnAccess{
+    position: fixed;
+    top: 120px;
+    left: 20px;
+    width: 55px; /* Largura fixa para garantir o formato circular */
+    height: 55px; /* Altura igual à largura */
+    padding: 0; /* Remova o padding para evitar distorções */
+    background-color: #007bff;
+    color: #fff;
+    border: 2px solid;
+    border-color: #007bff;
+    border-radius: 20%; /* Define o formato circular */
+    cursor: pointer;
+    font-size: 18px;
+    display: flex; /* Centraliza o conteúdo do botão */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    z-index: 1001;
+}
+
+#btnAccess i:hover{
+    transform: scale(1.10);
+    transition: .5s;
+}
+
+
+.btn-acessibilidade i{
+    font-size: 40px;
+}
+
+.menu-acessibilidade {
+    position: fixed;
+    top: 190px;
+    left: 20px;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 5px;
+    display: block;
+    gap: 10px;
+    z-index: 1000;
+}
+
+/* Botões dentro do menu */
+.menu-acessibilidade button {
+    padding: 8px;
+    border: none;
+    background-color: #ffffff;
+    color: #000000;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1rem
+}
+
+body.botao-ativado #btnAtivarLeitura{
+    background-color: #007bff2c;
+}
+
+
+
+#menu-acessibilidade button:hover{
+    transform: scale(1.05);
+    transition: .5s;
+    background-color: #007bff;
+    color: #fff;
+}
+
+#menu-acessibilidade button:hover i{
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+/* Contraste Alto -  */
+
+/* Parágrafos */
+body.high-contrast p {
+    color: #FFFFFF; /* Texto branco */
+}
+
+/* Links */
+body.high-contrast a {
+    color: #00FFFF; /* Ciano claro */
+    text-decoration: underline; /* Para indicar claramente links */
+}
+
+body.high-contrast h5.uagb-heading-text {
+    color: #3D9BFF !important; /* Amarelo brilhante para garantir contraste */
+}
+
+body.high-contrast .uagb-button__link {
+    color: #ffffff !important; /* Amarelo brilhante */
+}
+
+/* Títulos */
+body.high-contrast h1,
+body.high-contrast h2,
+body.high-contrast h3,
+body.high-contrast h4 {
+    color: #3D9BFF; /* Amarelo brilhante */
+}
+
+/* Botões */
+.high-contrast button {
+    background-color: #FFFFFF; /* Fundo branco */
+    color: #000000; /* Texto preto */
+    border: 2px solid #3D9BFF; /* Borda azl */
+}
+
+/* Imagens */
+
+/* Estilo para alterar o fundo da imagem de background para preto no modo de contraste alto */
+
+body.high-contrast .uagb-container__shape-fill {
+    fill: #000000; /* Cor de preenchimento preta */
+}
+
+/* Se for um fundo de imagem ou de elemento, você pode usar isso */
+body.high-contrast .site-background {
+    background-color: #000000; /* Altera a cor de fundo do site para preto */
+}
+
+body.high-contrast img,
+body.high-contrast .wp-block-uagb-image img,
+body.high-contrast .wp-block-uagb-container {
+    background-image: none; /* Remove a imagem de fundo padrão */
+    background-color: #000000; /* Garante que os elementos de fundo sejam alterados para preto */
+}
+
+
+/* Alterar imagem de fundo principal */
+body.high-contrast {
+    background-image: none; /* Remove a imagem de fundo padrão */
+    background-color: #000000; /* Define um fundo preto */
+}
+
+/* Alterar elementos com fundo em classes comuns */
+body.high-contrast [style*="background-image"] {
+    background-image: none !important; /* Remove imagens de fundo inline */
+    background-color: #000000 !important; /* Substitui por fundo preto */
+}
+
+body.high-contrast .has-background,
+body.high-contrast .wp-block-cover,
+body.high-contrast .site-background {
+    background-image: none !important; /* Remove imagens de fundo */
+    background-color: #000000 !important; /* Fundo preto */
+}
+
+/* Inputs e Formulários */
+body.high-contrast input,
+body.high-contrast textarea {
+    background-color: #000000; /* Fundo preto */
+    color: #3D9BFF; /* Texto amarelo */
+    border: 1px solid #3D9BFF; /* Borda amarela */
+}
+
+/* Tabelas */
+body.high-contrast table {
+    background-color: #000000;
+    color: #FFFFFF; 
+    border: 2px solid #3D9BFF; 
+}
+body.high-contrast th,
+body.high-contrast td {
+    border: 1px solid #3D9BFF; 
+    padding: 10px;
+}
+
+body.high-contrast .menu-acessibilidade{
+    background-color: #000;
+    color: #fff;
+    border: 2px solid;
+    border-color: #3D9BFF;
+}
+
+body.high-contrast .menu-acessibilidade button{
+    color: #3D9BFF;
+}
+
+body.high-contrast .btn-acessibilidade .btnAccess{
+    background-color: black;
+    color: white;
+    border: 2px solid;
+    border-color: #3D9BFF;
+}
+
+body.high-contrast .btn-acessibilidade {
+    background-color: #000;
+    border-color: #000000;
+}
+
+body.high-contrast .menu-acessibilidade button {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    background-color: #000000;
+    color: #3D9BFF;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1rem
+}
+
+body.high-contrast .site-footer-focus-item {
+    background-image: none !important; /* Remove imagens de fundo inline */
+    background-color: #000000 !important; /* Substitui por fundo preto */
+}
+
+body.high-contrast .site-footer-focus-item,
+body.high-contrast .site-footer-focus-item p,
+body.high-contrast .site-footer-focus-item a,
+body.high-contrast .site-footer-focus-item h2,
+body.high-contrast .site-footer-focus-item h4,
+body.high-contrast .site-footer-focus-item span {
+    color: #3D9BFF !important; /* Força a cor do texto em contraste alto */
+}
+
+/* Opcional: ajustar a cor de links */
+body.high-contrast .site-footer-focus-item a {
+    color: #00FF00 !important; /* Cor de destaque para links */
+}
+
+body.high-contrast #toggleGrayButton i{
+    color: #3D9BFF;
+}
+
+
+
+
+
+
+
+
+
+/* contraste negativo */
+
+/* Parágrafos */
+body.negative-contrast p {
+    color: #FFFFFF; /* Texto branco */
+}
+
+body.negative-contrast h5.uagb-heading-text {
+    color: #e5ff00 !important; /* Amarelo brilhante para garantir contraste */
+}
+
+body.negative-contrast .uagb-button__link {
+    color: #e5ff00 !important; /* Amarelo brilhante */
+}
+
+
+
+/* Links */
+body.negative-contrast a {
+    color: #e5ff00; /* amarelo /*
+    text-decoration: underline; /* Para indicar claramente links */
+}
+
+/* Títulos */
+body.negative-contrast h1,
+body.negative-contrast h2,
+body.negative-contrast h3,
+body.negative-contrast h4 {
+    color: #e5ff00; /* Amarelo brilhante */
+}
+
+/* Botões */
+.negative-contrast button {
+    background-color: #FFFFFF; /* Fundo branco */
+    color: #000000; /* Texto preto */
+    border: 2px solid #e5ff00; /* Borda amarela */
+}
+
+/* Imagens */
+body.negative-contrast img,
+body.negative-contrast .wp-block-uagb-image img,
+body.negative-contrast .wp-block-uagb-container {
+    background-image: none; /* Remove a imagem de fundo padrão */
+    background-color: #000000; /* Garante que os elementos de fundo sejam alterados para preto */
+}
+
+/* Alterar imagem de fundo principal */
+body.negative-contrast {
+    background-image: none; /* Remove a imagem de fundo padrão */
+    background-color: #000000; /* Define um fundo preto */
+}
+
+/* Alterar elementos com fundo em classes comuns */
+body.negative-contrast [style*="background-image"] {
+    background-image: none !important; /* Remove imagens de fundo inline */
+    background-color: #000000 !important; /* Substitui por fundo preto */
+}
+
+body.negative-contrast .has-background,
+body.negative-contrast .wp-block-cover,
+body.negative-contrast .site-background {
+    background-image: none !important; /* Remove imagens de fundo */
+    background-color: #000000 !important; /* Fundo preto */
+}
+
+/* Inputs e Formulários */
+body.negative-contrast input,
+body.negative-contrast textarea {
+    background-color: #000000; /* Fundo preto */
+    color: #e5ff00; /* Texto amarelo */
+    border: 1px solid #e5ff00; /* Borda amarela */
+}
+
+/* Tabelas */
+body.negative-contrast table {
+    background-color: #000000;
+    color: #FFFFFF; 
+    border: 2px solid #e5ff00; 
+}
+body.negative-contrast th,
+body.negative-contrast td {
+    border: 1px solid #e5ff00; 
+    padding: 10px;
+}
+
+body.negative-contrast .menu-acessibilidade {
+    background-color: #000;
+    color: #fff;
+    border: 2px solid;
+    border-color: #e5ff00;
+}
+
+body.negative-contrast .menu-acessibilidade button {
+    color: #e5ff00;
+}
+
+body.negative-contrast .btn-acessibilidade .btnAccess {
+    background-color: black;
+    color: white;
+    border: 2px solid;
+    border-color: #e5ff00;
+}
+
+body.negative-contrast .btn-acessibilidade {
+    background-color: #000;
+    border-color: #000000;
+}
+
+body.negative-contrast .menu-acessibilidade button {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    background-color: #000000;
+    color: #e5ff00;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+body.negative-contrast .site-footer-focus-item {
+    background-image: none !important; /* Remove imagens de fundo inline */
+    background-color: #000000 !important; /* Substitui por fundo preto */
+}
+
+body.negative-contrast .site-footer-focus-item,
+body.negative-contrast .site-footer-focus-item p,
+body.negative-contrast .site-footer-focus-item a,
+body.negative-contrast .site-footer-focus-item h2,
+body.negative-contrast .site-footer-focus-item h4,
+body.negative-contrast .site-footer-focus-item span {
+    color: #e5ff00 !important; /* Força a cor do texto em contraste alto */
+}
+
+/* Opcional: ajustar a cor de links */
+body.negative-contrast .site-footer-focus-item a {
+    color: #00FF00 !important; /* Cor de destaque para links */
+}
+
+body.negative-contrast #toggleGrayButton i {
+    color: #e5ff00;
+}
+
+
+
+
+
+
+
+ /* escala de cinza */
+
+ body.tons-cinza{
+    filter: grayscale(100%);
+}
+
+body.tons-cinza .menu-acessibilidade{
+    position: fixed
+}
+
+.block #menu-acessibilidade button {
+    display: block
+}
+
+#GrayScale{
+    color: black;
+}
+
+
+
+
+
+/* Aplica sublinhado a todos os links, incluindo os que envolvem imagens */
+body.link-sub a,
+body.link-sub .uagb-button__link,
+body.link-sub .main-header-menu a,
+body.link-sub .menu-link,
+body.link-sub .uagb-buttons-repeater,
+body.link-sub button[onclick],
+body.link-sub a:hover {
+    text-decoration: underline !important;
+    text-decoration-color: #ff0000 !important; /* Cor do sublinhado em vermelho */
+}
+
+
+/* Opcional: sublinhar também ao passar o mouse */
+body.link-sub a:hover,
+body.link-sub .uagb-button__link:hover,
+body.link-sub .main-header-menu a:hover,
+body.link-sub .menu-link:hover,
+body.link-sub .uagb-buttons-repeater:hover,
+body.link-sub button[onclick]:hover,
+body.link-sub .wp-block-image a:hover {
+    text-decoration: underline !important;
+}
+
+/* Aplica sublinhado a todos os links quando a classe 'link-sub' é aplicada ao body */
+body.link-sub a {
+    text-decoration: underline !important;
+    text-decoration-color: #ff0000 !important; /* Cor do sublinhado em vermelho */
+}
+
+/* Opcional: aplica o sublinhado quando o mouse passa sobre o link */
+body.link-sub a:hover {
+    text-decoration: underline !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Fonte Legivel */
+
+/* Fonte Legível aplicada a todos os elementos de texto */
+body.font-leg p,
+body.font-leg h1,
+body.font-leg h2,
+body.font-leg h3,
+body.font-leg h4,
+body.font-leg h5,
+body.font-leg h6,
+body.font-leg a,
+body.font-leg button,
+body.font-leg li,
+body.font-leg span,
+body.font-leg div{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 100;
+}
+
+body.font-leg h1{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif !important;
+    font-weight: 100;
+}
+
+body.font-leg button{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* caixa de mensagem */
+
+.messageBoxAccess{
+    position: absolute;
+    top: 10px;
+    left: 60px;
+    width: 20rem;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 0 10px 10px;
+    display: none;
+    gap: 10px;
+    z-index: 1000;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.btn-acessibilidade:hover .messageBoxAccess {
+    display: block;
+    animation: float 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes float {
+    0%{
+        top: 0;
+    }
+    100%{
+        top: 10px;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* botao exit display none */
+
+#button-exit{
+    display: none;
+}
+
+
+
+
+/* créditos */
+.messageBoxFinal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+#messageBoxFinal p,
+#messageBoxFinal a{
+    text-decoration: none;
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+
+
+
+
+
+
+
+/* responsividade */
+
+@media screen and (max-width: 700px) {
+    .messageBoxAccess{
+        position: absolute;
+        top: 10px;
+        left: 60px;
+        width: 10rem;
+        background-color: #ffffff;
+        padding: 15px;
+        border-radius: 0 10px 10px;
+        display: none;
+        gap: 10px;
+        z-index: 1000;
+        color: black;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .block{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .bloco-funcoes button{
+        width: 9rem;
+        height: 6rem;
+        background-color: #ffffff;
+        margin: 20px;
+        border-radius: 20px;
+    }
+
+ 
+
+    .menu-acessibilidade {
+        position: fixed; 
+        top: 80px; 
+        width: 100vw; 
+        height: 90vh; 
+        background-color: #EFF1F5; 
+        display: flex; 
+        justify-content: center;
+        align-items: center;
+        z-index: 1000; 
+        max-width: 340px;
+        border-radius: 20px;
+    }
+
+    .btn-acessibilidade .btnAccess{
+        position: fixed;
+        top: 150px;
+        width: 50px; 
+        height: 50px;
+        padding: 0; 
+        background-color: #007bff;
+        color: #fff;
+        border: 10px solid;
+        border-color: #007bff;
+        border-radius: 20%;
+        cursor: pointer;
+        font-size: 18px;
+        display: flex; 
+        align-items: center;
+        justify-content: center; 
+        z-index: 1001;
+        transition: .5s;
+    }
+
+    .bloco-funcoes{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    body.menu-ativado  .btn-acessibilidade .btnAccess{
+        position: fixed;
+        top: 20px;
+        z-index: 11100;
+    }
+
+    body.menu-ativado .menu-acessibilidade{
+        z-index: 10000; 
+    }
+
+    body.menu-ativado #button-exit{
+        position: fixed;
+        top: 90px;
+        right: 4.5rem;
+        width: 40px; 
+        height: 40px;
+        padding: 0; 
+        cursor: pointer;
+        font-size: 2rem;
+        display: flex; 
+        align-items: center;
+        justify-content: center; 
+        z-index: 11000;
+        transition: .5s;
+        color: #007bff;
+    }
+
+    .funcoes-box button {
+        display: flex; 
+        flex-direction: column; 
+        align-items: center;
+        justify-content: center; 
+        text-align: center; 
+        padding: 10px; 
+        font-size: 14px;
+        border: none; 
+        cursor: pointer; 
+    }
+    
+    .funcoes-box i {
+        font-size: 24px;
+        margin-bottom: 5px;
+        display: block; 
+    }
+
+    .messageBoxFinal{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    #messageBoxFinal p,
+    #messageBoxFinal a{
+        text-decoration: none;
+        margin-top: 10px;
+        font-size: 1rem;
+    }
+    
+
+}

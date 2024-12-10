@@ -1,23 +1,3 @@
-// Função de integração para iOS
-window.addEventListener('scroll', function () {
-    let header = document.querySelector('#header');
-    header.classList.toggle('rolagem', window.scrollY > 0);
-});
-
-var onda1 = document.getElementById('onda1');
-var onda2 = document.getElementById('onda2');
-var onda3 = document.getElementById('onda3');
-var onda4 = document.getElementById('onda4');
-
-window.addEventListener('scroll', function () {
-    var rolagemPos = window.scrollY;
-
-    onda1.style.backgroundPositionX = 400 + rolagemPos * 2 + 'px';
-    onda2.style.backgroundPositionX = 300 + rolagemPos * -2 + 'px';
-    onda3.style.backgroundPositionX = 200 + rolagemPos * 1 + 'px';
-    onda4.style.backgroundPositionX = 100 + rolagemPos * -1 + 'px';
-});
-
 // Adicionando integração para capturar gestos e texto selecionado no iOS
 document.addEventListener('selectionchange', () => {
     if (leituraAtivada) {
@@ -89,7 +69,7 @@ document.getElementById('btn-acessibilidade').addEventListener('click', function
     menu.style.display = (menu.style.display === 'none' || menu.style.display === '') ? 'block' : 'none';
     messageDisappear.style.display = (messageDisappear.style.display === 'none' || menu.style.display === '') ? 'none' : 'none';
     document.body.classList.toggle('menu-ativado');
-    synth.cancel();
+    
 });
 
 function toggleHighContrast() {
