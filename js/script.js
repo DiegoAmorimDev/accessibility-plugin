@@ -10,14 +10,8 @@ document.addEventListener('selectionchange', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Seleciona os botões
     const increaseFontButton = document.getElementById('increase-font');
     const decreaseFontButton = document.getElementById('decrease-font');
-    const toggleContrastButton = document.getElementById('toggle-contrast');
-    const toggleNContrastButton = document.getElementById('toggle-Ncontrast');
-    const toggleLinkSubButton = document.getElementById('toggle-Link');
-    const toggleFontLegButton = document.getElementById('font-legi');
-    const toggleGrayScale = document.getElementById('toggleGrayButton');
 
     // Define o tamanho de fonte padrão
     let fontSize = 100; // Percentual base (100% = 16px)
@@ -39,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.documentElement.style.fontSize = `${fontSize}%`;
         }
     });
+
 
     // Alternar contraste
     toggleContrastButton.addEventListener('click', () => {
@@ -83,14 +78,26 @@ function toggleNegativeContrast() {
 }
 
 function increaseFontSize() {
-    const currentSize = parseFloat(getComputedStyle(document.body).fontSize);
-    document.documentElement.style.fontSize = (currentSize * 1.1) + 'px';
+    const elements = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6, span, a, div');
+    
+    elements.forEach(element => {
+        const currentSize = parseFloat(getComputedStyle(element).fontSize);
+        const newSize = currentSize * 1.1; // Aumenta 10%
+        element.style.fontSize = `${newSize}px`;
+    });
+
     synth.cancel();
 }
 
 function decreaseFontSize() {
-    const currentSize = parseFloat(getComputedStyle(document.body).fontSize);
-    document.documentElement.style.fontSize = (currentSize * 0.9) + 'px';
+    const elements = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6, span, a, div');
+    
+    elements.forEach(element => {
+        const currentSize = parseFloat(getComputedStyle(element).fontSize);
+        const newSize = currentSize * 0.9; // Diminui 10%
+        element.style.fontSize = `${newSize}px`;
+    });
+
     synth.cancel();
 }
 

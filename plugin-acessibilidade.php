@@ -48,7 +48,7 @@ function exibir_plugin_acessibilidade() {
     <div class="block">
         <div id="menu-acessibilidade" class="menu-acessibilidade" style="display: none;">
             <div class="flex">
-                <p>Uepa Acessível</p>
+                    <p>Uepa Acessível</p>
             </div>
             <div class="bloco-funcoes">
                 <div class="funcoes-box">
@@ -85,9 +85,12 @@ function exibir_plugin_acessibilidade() {
                     <button id="btnAtivarLeitura"> <i class="bi bi-soundwave"></i> Leia a página</button>
                 </div>
             </div>
-            <div class="messageBoxFinal" id="messageBoxFinal">
-                <p>Desenvolvido por <a href="https://dspd.uepa.br/" target="_blank">DSPD - UEPA</a></p>
+
+            <div class="flex">
+                <a href="https://dspd.uepa.br/" target="_blank"><img id="LOGO-DSPD" src="wp-content/plugins/uepa-acessivel-wp - Copia/img/DSPD-LOGO.png" alt="LOGO-DSPD"></a>
             </div>
+
+        
         </div>
     </div>
     <?php
