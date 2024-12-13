@@ -40,7 +40,9 @@ function exibir_plugin_acessibilidade() {
             <div class="messageBoxAccess" id="messageBoxAccess">
                 <p>Olá, eu sou o menu da uepa acessível. <br> Eu tenho muitos recursos assistivos, caso precise de mim, estarei aqui!</p>
             </div>
-            <i class="bi bi-universal-access-circle"></i>
+            <div class="botao-menu">
+                <i class="bi bi-universal-access-circle"></i>
+            </div>
             <i class="bi bi-box-arrow-left" id="button-exit"></i>
         </div>
     </button>
@@ -48,42 +50,49 @@ function exibir_plugin_acessibilidade() {
     <div class="block">
         <div id="menu-acessibilidade" class="menu-acessibilidade" style="display: none;">
             <div class="flex">
-                    <p>Uepa Acessível</p>
+                    <p class="title-menu">Uepa Acessível</p>
             </div>
-            <div class="bloco-funcoes">
-                <div class="funcoes-box">
-                    <button onclick="toggleHighContrast()"> <i class="bi bi-circle-half"></i> Alto Contraste</button>
+            <div class="bloco-opcoes">
+                <div class="bloco-funcoes">
+                    <div class="funcoes-box">
+                        <button onclick="toggleHighContrast()"> <i class="bi bi-circle-half"></i> Alto Contraste</button>
+                    </div>
+                    <div class="funcoes-box">
+                        <button onclick="toggleNegativeContrast()"> <i class="bi bi-eye-fill"></i> Contraste Negativo</button>
+                    </div>
                 </div>
-                <div class="funcoes-box">
-                    <button onclick="toggleNegativeContrast()"> <i class="bi bi-eye-fill"></i> Contraste Negativo</button>
+                <div class="bloco-funcoes">
+                    <div class="funcoes-box">
+                        <button onclick="increaseFontSize()"> <i class="bi bi-zoom-in"></i> Aumentar Fonte </button>
+                    </div>
+                    <div class="funcoes-box">
+                        <button onclick="decreaseFontSize()"> <i class="bi bi-zoom-out"></i> Diminuir Fonte</button>
+                    </div>
+                </div>
+                <div class="bloco-funcoes">
+                    <div class="funcoes-box">
+                        <button id="toggleGrayButton" onclick="toggleGrayScale()"> <i id="GrayScale" class="bi bi-upc"></i> Escala de cinza</button>
+                    </div>
+                    <div class="funcoes-box">
+                        <button onclick="toggleLinkSub()"> <i class="bi bi-link"></i> Links Sublinhados</button>
+                    </div>
+                </div>
+                <div class="bloco-funcoes">
+                    <div class="funcoes-box">
+                        <button onclick="toggleFontLeg()"> <i class="bi bi-file-font"></i> Fonte Legível</button>
+                    </div>
+                    <div class="funcoes-box">
+                        <button id="btnAtivarLeitura"> <i class="bi bi-soundwave"></i> Leia a página</button>
+                    </div>
                 </div>
             </div>
 
-            <div class="bloco-funcoes">
-                <div class="funcoes-box">
-                    <button onclick="increaseFontSize()"> <i class="bi bi-zoom-in"></i> Aumentar Fonte </button>
-                </div>
-                <div class="funcoes-box">
-                    <button onclick="decreaseFontSize()"> <i class="bi bi-zoom-out"></i> Diminuir Fonte</button>
-                </div>
+            <div class="flex">
+                <button class="redefinir-button" onclick="resetConfig()"><i class="bi bi-arrow-clockwise"></i>REDEFINIR CONFIGURAÇÕES</button>
             </div>
 
-            <div class="bloco-funcoes">
-                <div class="funcoes-box">
-                    <button id="toggleGrayButton" onclick="toggleGrayScale()"> <i id="GrayScale" class="bi bi-upc"></i> Escala de cinza</button>
-                </div>
-                <div class="funcoes-box">
-                    <button onclick="toggleLinkSub()"> <i class="bi bi-link"></i> Links Sublinhados</button>
-                </div>
-            </div>
-
-            <div class="bloco-funcoes">
-                <div class="funcoes-box">
-                    <button onclick="toggleFontLeg()"> <i class="bi bi-file-font"></i> Fonte Legível</button>
-                </div>
-                <div class="funcoes-box">
-                    <button id="btnAtivarLeitura"> <i class="bi bi-soundwave"></i> Leia a página</button>
-                </div>
+            <div class="report-messages">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=suporte@uepa.br&su=Relatar%20um%20Problema&body=Descreva%20seu%20problema%20de%20acessibilidade%20aqui" target="_blank">Reportar um problema</a>
             </div>
 
             <div class="flex">

@@ -12,6 +12,7 @@ document.addEventListener('selectionchange', () => {
 document.addEventListener('DOMContentLoaded', () => {
     const increaseFontButton = document.getElementById('increase-font');
     const decreaseFontButton = document.getElementById('decrease-font');
+    
 
     // Define o tamanho de fonte padrão
     let fontSize = 100; // Percentual base (100% = 16px)
@@ -32,24 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
             fontSize -= 10;
             document.documentElement.style.fontSize = `${fontSize}%`;
         }
-    });
-
-
-    // Alternar contraste
-    toggleContrastButton.addEventListener('click', () => {
-        document.body.classList.toggle('high-contrast');
-    });
-
-    toggleLinkSubButton.addEventListener('click', () => {
-        document.body.classList.toggle('link-sub');
-    });
-
-    toggleNContrastButton.addEventListener('click', () => {
-        document.body.classList.toggle('toggle-NegativeContrast');
-    });
-
-    toggleFontLegButton.addEventListener('click', () => {
-        document.body.classList.toggle('font-leg');
     });
 
     // Tons de cinza
@@ -90,7 +73,7 @@ function increaseFontSize() {
 }
 
 function decreaseFontSize() {
-    const elements = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6, span, a, div');
+    const elements = document.querySelectorAll('p:not(.title-menu), h1, h2, h3, h4, h5, h6, span, a, div');
     
     elements.forEach(element => {
         const currentSize = parseFloat(getComputedStyle(element).fontSize);
@@ -116,15 +99,41 @@ function toggleFontLeg() {
     synth.cancel();
 }
 
+let leituraAtivada = false;
+
 const synth = window.speechSynthesis;
 
-let leituraAtivada = false;
+
 
 function lerTexto(texto) {
     synth.cancel();
     const utterance = new SpeechSynthesisUtterance(texto);
     utterance.lang = 'pt-BR';
     synth.speak(utterance);
+}
+
+function resetConfig() {
+    document.body.classList.remove('font-leg', 'link-sub', 'tons-cinza', 'high-contrast', 'negative-contrast');
+
+    const elements = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6, span, a, div');
+    
+    elements.forEach(element => {
+        const currentSize = parseFloat(getComputedStyle(element).fontSize);
+        const newSize = currentSize * 1.1; // Aumenta 10%
+        element.style.fontSize = `20px`;
+    });
+    
+    if (leituraAtivada) {
+        leituraAtivada = !leituraAtivada;
+        synth.cancel();
+        const botao = document.getElementById('btnAtivarLeitura');
+        botao.innerHTML = `
+            <i class="bi bi-soundwave"></i> 
+            ${leituraAtivada ? "Desativar Leitura" : "Ativar Leitura"}
+        `;
+        
+            lerTexto("A leitura foi desativada");
+    } 
 }
 
 document.getElementById('btnAtivarLeitura').addEventListener('click', () => {
