@@ -11,15 +11,19 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-// Função para incluir os arquivos CSS e JS
 function plugin_acessibilidade_scripts() {
-    // Inclui CSS
-    wp_enqueue_style('plugin-acessibilidade-style', plugins_url('css/estilo.css', __FILE__));
+    // Versão dinâmica baseada na última modificação do arquivo (para evitar cache)
+    $version_css = filemtime(plugin_dir_path(__FILE__) . 'css/estilo.css');
+    $version_js = filemtime(plugin_dir_path(__FILE__) . 'js/script.js');
 
-    // Inclui JS
-    wp_enqueue_script('plugin-acessibilidade-script', plugins_url('js/script.js', __FILE__), array('jquery'), null, true);
+    // Inclui CSS com query string
+    wp_enqueue_style('plugin-acessibilidade-style', plugins_url('css/estilo.css', __FILE__), array(), $version_css);
+
+    // Inclui JS com query string
+    wp_enqueue_script('plugin-acessibilidade-script', plugins_url('js/script.js', __FILE__), array('jquery'), $version_js, true);
 }
 add_action('wp_enqueue_scripts', 'plugin_acessibilidade_scripts');
+
 
 function plugin_acessibilidade_carregar_bootstrap() {
     // CSS do Bootstrap
@@ -37,13 +41,12 @@ function exibir_plugin_acessibilidade() {
     ?>
     <button id="btn-acessibilidade" class="btn-acessibilidade">
         <div class="btnAccess" id="btnAccess">
-            <div class="messageBoxAccess" id="messageBoxAccess">
-                <p>Olá, eu sou o menu da uepa acessível. <br> Eu tenho muitos recursos assistivos, caso precise de mim, estarei aqui!</p>
-            </div>
-            <div class="botao-menu">
+            <div class="botao-menu" id="botao-menu">
                 <i class="bi bi-universal-access-circle"></i>
             </div>
-            <i class="bi bi-box-arrow-left" id="button-exit"></i>
+            <div class="botao-sair">
+                <i class="bi bi-box-arrow-left" id="button-exit"></i>
+            </div>
         </div>
     </button>
 
@@ -54,7 +57,7 @@ function exibir_plugin_acessibilidade() {
             </div>
             <div class="bloco-opcoes">
                 <div class="bloco-funcoes">
-                    <div class="funcoes-box">
+                    <div class="funcoes-box" id="funcoes-box">
                         <button onclick="toggleHighContrast()"> <i class="bi bi-circle-half"></i> Alto Contraste</button>
                     </div>
                     <div class="funcoes-box">
@@ -63,10 +66,10 @@ function exibir_plugin_acessibilidade() {
                 </div>
                 <div class="bloco-funcoes">
                     <div class="funcoes-box">
-                        <button onclick="increaseFontSize()"> <i class="bi bi-zoom-in"></i> Aumentar Fonte </button>
+                        <button onclick="increaseFontSize()" id="increase-font"> <i class="bi bi-zoom-in"></i> Aumentar Fonte </button>
                     </div>
                     <div class="funcoes-box">
-                        <button onclick="decreaseFontSize()"> <i class="bi bi-zoom-out"></i> Diminuir Fonte</button>
+                        <button onclick="decreaseFontSize()" id="decrease-font"> <i class="bi bi-zoom-out"></i> Diminuir Fonte</button>
                     </div>
                 </div>
                 <div class="bloco-funcoes">

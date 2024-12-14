@@ -9,135 +9,108 @@ document.addEventListener('selectionchange', () => {
     }
 });
 
+// Inicializando ao carregar a página
 document.addEventListener('DOMContentLoaded', () => {
-    const increaseFontButton = document.getElementById('increase-font');
-    const decreaseFontButton = document.getElementById('decrease-font');
-    
-
-    // Define o tamanho de fonte padrão
-    let fontSize = 100; // Percentual base (100% = 16px)
-    const minFontSize = 75; // Limite mínimo (75% = 12px)
-    const maxFontSize = 150; // Limite máximo (150% = 24px)
-
-    // Aumentar fonte
-    increaseFontButton.addEventListener('click', () => {
-        if (fontSize < maxFontSize) {
-            fontSize += 10;
-            document.documentElement.style.fontSize = `${fontSize}%`;
-        }
+    // Restaurar estado inicial do menu e botões de acessibilidade
+    const elements = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6, span, a, div');
+    elements.forEach((element, index) => {
+        const fontSize = getComputedStyle(element).fontSize;
+        initialFontSizes[index] = {
+            element: element,
+            fontSize: fontSize
+        };
     });
 
-    // Diminuir fonte
-    decreaseFontButton.addEventListener('click', () => {
-        if (fontSize > minFontSize) {
-            fontSize -= 10;
-            document.documentElement.style.fontSize = `${fontSize}%`;
-        }
-    });
-
-    // Tons de cinza
-    toggleGrayScale.addEventListener('click', () => {
-        document.body.classList.toggle('tons-cinza');
-    });
+    console.log("Tamanhos de fonte salvos:", initialFontSizes);
 });
 
+// Alternar exibição do menu de acessibilidade
 document.getElementById('btn-acessibilidade').addEventListener('click', function () {
     const menu = document.getElementById('menu-acessibilidade');
-    const messageDisappear = document.getElementById('messageBoxAccess');
     menu.style.display = (menu.style.display === 'none' || menu.style.display === '') ? 'block' : 'none';
-    messageDisappear.style.display = (messageDisappear.style.display === 'none' || menu.style.display === '') ? 'none' : 'none';
     document.body.classList.toggle('menu-ativado');
-    
 });
 
+// Função para alternar alto contraste
 function toggleHighContrast() {
     document.body.classList.toggle('high-contrast');
+    document.body.classList.remove('negative-contrast');
     synth.cancel();
 }
 
+// Função para alternar contraste negativo
 function toggleNegativeContrast() {
     document.body.classList.toggle('negative-contrast');
+    document.body.classList.remove('high-contrast');
     synth.cancel();
 }
 
-function increaseFontSize() {
-    const elements = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6, span, a, div');
-    
-    elements.forEach(element => {
-        const currentSize = parseFloat(getComputedStyle(element).fontSize);
-        const newSize = currentSize * 1.1; // Aumenta 10%
-        element.style.fontSize = `${newSize}px`;
-    });
-
-    synth.cancel();
-}
-
-function decreaseFontSize() {
-    const elements = document.querySelectorAll('p:not(.title-menu), h1, h2, h3, h4, h5, h6, span, a, div');
-    
-    elements.forEach(element => {
-        const currentSize = parseFloat(getComputedStyle(element).fontSize);
-        const newSize = currentSize * 0.9; // Diminui 10%
-        element.style.fontSize = `${newSize}px`;
-    });
-
-    synth.cancel();
-}
-
+// Função para alternar tons de cinza
 function toggleGrayScale() {
     document.body.classList.toggle('tons-cinza');
     synth.cancel();
 }
 
+// Função para sublinhar links
 function toggleLinkSub() {
     document.body.classList.toggle('link-sub');
     synth.cancel();
 }
 
+// Função para alternar fonte legível
 function toggleFontLeg() {
     document.body.classList.toggle('font-leg');
     synth.cancel();
 }
 
-let leituraAtivada = false;
-
-const synth = window.speechSynthesis;
-
-
-
-function lerTexto(texto) {
-    synth.cancel();
-    const utterance = new SpeechSynthesisUtterance(texto);
-    utterance.lang = 'pt-BR';
-    synth.speak(utterance);
-}
-
-function resetConfig() {
-    document.body.classList.remove('font-leg', 'link-sub', 'tons-cinza', 'high-contrast', 'negative-contrast');
-
-    const elements = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6, span, a, div');
-    
+// Função para aumentar o tamanho da fonte
+function increaseFontSize() {
+    const elements = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6, span, a');
     elements.forEach(element => {
         const currentSize = parseFloat(getComputedStyle(element).fontSize);
         const newSize = currentSize * 1.1; // Aumenta 10%
-        element.style.fontSize = `20px`;
+        element.style.fontSize = `${newSize}px`;
     });
-    
+    synth.cancel();
+}
+
+// Função para diminuir o tamanho da fonte
+function decreaseFontSize() {
+    const elements = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6, span, a');
+    elements.forEach(element => {
+        const currentSize = parseFloat(getComputedStyle(element).fontSize);
+        const newSize = currentSize * 0.9; // Diminui 10%
+        element.style.fontSize = `${newSize}px`;
+    });
+    synth.cancel();
+}
+
+// Função para restaurar configurações iniciais
+function resetConfig() {
+    document.body.classList.remove('font-leg', 'link-sub', 'tons-cinza', 'high-contrast', 'negative-contrast');
+
+    // Restaurar tamanhos iniciais das fontes
+    Object.values(initialFontSizes).forEach(item => {
+        item.element.style.fontSize = item.fontSize;
+    });
+
+    document.documentElement.style.fontSize = '';
+
+    // Desativar leitura, se ativa
     if (leituraAtivada) {
-        leituraAtivada = !leituraAtivada;
+        leituraAtivada = false;
         synth.cancel();
         const botao = document.getElementById('btnAtivarLeitura');
         botao.innerHTML = `
             <i class="bi bi-soundwave"></i> 
-            ${leituraAtivada ? "Desativar Leitura" : "Ativar Leitura"}
+            Ativar Leitura
         `;
-        
-            lerTexto("A leitura foi desativada");
-    } 
+        lerTexto("A leitura foi desativada.");
+    }
 }
 
+// Ativar ou desativar a funcionalidade de leitura
 document.getElementById('btnAtivarLeitura').addEventListener('click', () => {
-    document.body.classList.toggle("botao-ativado");
     leituraAtivada = !leituraAtivada;
     synth.cancel();
     const botao = document.getElementById('btnAtivarLeitura');
@@ -152,6 +125,15 @@ document.getElementById('btnAtivarLeitura').addEventListener('click', () => {
     }
 });
 
+// Função para leitura do texto selecionado
+function lerTexto(texto) {
+    synth.cancel();
+    const utterance = new SpeechSynthesisUtterance(texto);
+    utterance.lang = 'pt-BR';
+    synth.speak(utterance);
+}
+
+// Leitura ao soltar o mouse
 document.addEventListener('mouseup', () => {
     if (leituraAtivada) {
         const textoSelecionado = window.getSelection().toString().trim();
@@ -160,3 +142,7 @@ document.addEventListener('mouseup', () => {
         }
     }
 });
+
+let leituraAtivada = false;
+const synth = window.speechSynthesis;
+const initialFontSizes = {};
