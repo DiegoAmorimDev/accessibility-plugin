@@ -1,9 +1,13 @@
+// Variável para armazenar o texto atual sendo lido
+let textoAtual = "";
+
 // Adicionando integração para capturar gestos e texto selecionado no iOS
 document.addEventListener('selectionchange', () => {
     if (leituraAtivada) {
         const selection = window.getSelection();
         const textoSelecionado = selection ? selection.toString().trim() : '';
-        if (textoSelecionado) {
+        if (textoSelecionado && textoSelecionado !== textoAtual) {
+            textoAtual = textoSelecionado; // Atualiza o texto atual
             lerTexto(textoSelecionado);
         }
     }
@@ -116,10 +120,10 @@ document.getElementById('btnAtivarLeitura').addEventListener('click', () => {
     const botao = document.getElementById('btnAtivarLeitura');
     botao.innerHTML = `
         <i class="bi bi-soundwave"></i> 
-        ${leituraAtivada ? "Desativar Leitura" : "Ativar Leitura"}
+        ${leituraAtivada ? "Desativar Leitura" : "Leia a página"}
     `;
     if (leituraAtivada) {
-        lerTexto("A leitura foi ativada. Feche o menu de acessibilidade e selecione um texto para começar.");
+        lerTexto("A leitura foi ativada. Saia do menu de acessibilidade e selecione um texto para começar.");
     } else {
         lerTexto("A leitura foi desativada.");
     }
@@ -137,7 +141,8 @@ function lerTexto(texto) {
 document.addEventListener('mouseup', () => {
     if (leituraAtivada) {
         const textoSelecionado = window.getSelection().toString().trim();
-        if (textoSelecionado) {
+        if (textoSelecionado && textoSelecionado !== textoAtual) {
+            textoAtual = textoSelecionado; // Atualiza o texto atual
             lerTexto(textoSelecionado);
         }
     }

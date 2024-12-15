@@ -61,7 +61,7 @@ function exibir_plugin_acessibilidade() {
                         <button onclick="toggleHighContrast()"> <i class="bi bi-circle-half"></i> Alto Contraste</button>
                     </div>
                     <div class="funcoes-box">
-                        <button onclick="toggleNegativeContrast()"> <i class="bi bi-eye-fill"></i> Contraste Negativo</button>
+                        <button onclick="toggleNegativeContrast()" id="negative-contrast"> <i class="bi bi-eye-fill"></i> Contraste Negativo</button>
                     </div>
                 </div>
                 <div class="bloco-funcoes">
@@ -95,7 +95,7 @@ function exibir_plugin_acessibilidade() {
             </div>
 
             <div class="report-messages">
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=suporte@uepa.br&su=Relatar%20um%20Problema&body=Descreva%20seu%20problema%20de%20acessibilidade%20aqui" target="_blank">Reportar um problema</a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=suporte@uepa.br&su=Relatar%20um%20Problema&body=Descreva%20seu%20problema%20aqui,%20nossa%20equipe%20fará%20o%20possível%20para%20lhe%20ajudar." target="_blank">Reportar um problema</a>
             </div>
 
             <div class="flex">

@@ -1,202 +1,225 @@
 /* config geral desktop */
 
 .flex{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.block{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.block{
+display: flex;
+justify-content: center;
+align-items: center;
 }
 
 
 .botao-menu{
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #007bff;
-  border-radius: 20%;
-  transition: .5s;
+width: 50px;
+height: 50px;
+display: flex;
+align-items: center;
+justify-content: center;
+background-color: #007bff;
+border-radius: 20%;
+transition: .5s;
 }
 
 /* Excluir a alteração de tamanho de fonte para o menu de acessibilidade */
 #menu-acessibilidade, #menu-acessibilidade * {
-  font-size: initial !important;
+font-size: initial !important;
 }
 
 .botao-menu:hover{
-  transform: scale(1.05);
+transform: scale(1.05);
 }
 
 .title-menu{
-  font-size: 20px !important;
+font-size: 20px !important;
 }
 
 .accessibility-bar button {
-    padding: 8px;
-    border: none;
-    border-radius: 5px;
-    background-color: #ffffff;
-    color: #000000;
-    cursor: pointer;
-    font-size: 1rem;
-    margin-top: 1rem
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ffffff;
+  color: #000000;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 1rem
 }
 
 .accessibility-bar button:hover {
-    background-color: #ffffff;
+  background-color: #ffffff;
 }
 
 
 .btn-acessibilidade .btnAccess{
-    position: fixed;
-    top: 120px;
-    left: 20px;
-    width: 55px; /* Largura fixa para garantir o formato circular */
-    height: 55px; /* Altura igual à largura */
-    padding: 0; /* Remova o padding para evitar distorções */
-    color: #fff;
-    border-radius: 20%; /* Define o formato circular */
-    cursor: pointer;
-    font-size: 18px;
-    display: flex; /* Centraliza o conteúdo do botão */
-    align-items: center; /* Centraliza verticalmente */
-    justify-content: center; /* Centraliza horizontalmente */
-    z-index: 1001;
-    transition: .5s;
+  position: fixed;
+  top: 120px;
+  left: 20px;
+  width: 55px; /* Largura fixa para garantir o formato circular */
+  height: 55px; /* Altura igual à largura */
+  padding: 0; /* Remova o padding para evitar distorções */
+  color: #fff;
+  border-radius: 20%; /* Define o formato circular */
+  cursor: pointer;
+  font-size: 18px;
+  display: flex; /* Centraliza o conteúdo do botão */
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: center; /* Centraliza horizontalmente */
+  z-index: 1001;
+  transition: .5s;
 }
 
 @media screen and (min-width: 768px) {
 body.menu-ativado  .btn-acessibilidade .btnAccess{
-    position: fixed;
-    top: 10px;
-    z-index: 11100;
+  position: fixed;
+  top: 10px;
+  z-index: 11100;
 }
 }
 
 .btn-acessibilidade i{
-    font-size: 40px;
+  font-size: 40px;
 }
 
 .menu-acessibilidade {
-    position: fixed !important;
-    top: 80px;
-    left: 0;
-    width: 60vh; 
-    height: 89vh;
-    background-color: #F6F6F6;
-    padding: 15px;
-    border-radius: 0 20px 0 0;
-    display: flex;
-    gap: 10px;
-    z-index: 1000;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid;
-    border-color: #0D99FF;
+  position: fixed !important;
+  top: 80px;
+  left: 0;
+  width: 60vh; 
+  height: 89vh;
+  background-color: #F6F6F6;
+  padding: 15px;
+  border-radius: 0 20px 0 0;
+  display: flex;
+  gap: 10px;
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid;
+  border-color: #0D99FF;
 }
 
 .bloco-funcoes{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: none !important;
+display: flex;
+align-items: center;
+justify-content: center;
+background: none !important;
 }
 
 
 .bloco-funcoes button{
-  width: 9rem !important;
-  height: 5.5rem !important;
-  background-color: #ffffff;
-  margin-left: 25px;
-  margin-right: 25px;
-  border-radius: 5px;
+width: 9rem !important;
+height: 5.5rem !important;
+background-color: #ffffff;
+margin-left: 25px;
+margin-right: 25px;
+border-radius: 5px;
 }
 
 .redefinir-button{
-  border-radius: 10px;
-  border: 2px solid #0D99FF !important;
-  border-color: #0D99FF;
-  color: #0D99FF !important;
-  font-weight: 700;
+border-radius: 10px;
+border: 2px solid #0D99FF !important;
+border-color: #0D99FF;
+color: #0D99FF !important;
+font-weight: 700;
 }
 
 .redefinir-button:hover{
-  color: #FFFFFF !important;
+color: #FFFFFF !important;
 }
 
 .redefinir-button i{
-  font-size: 20px;
-  margin: 5px;
+font-size: 20px;
+margin: 5px;
 }
 
-.funcoes-box button {
-  display: flex; 
-  flex-direction: column; 
-  align-items: center;
-  justify-content: center; 
-  text-align: center; 
-  padding: 10px; 
-  font-size: 10px !important;
-  border: none; 
-  cursor: pointer; 
+.bloco-funcoes .funcoes-box button {
+display: flex; 
+flex-direction: column; 
+align-items: center;
+justify-content: center; 
+text-align: center; 
+padding: 10px; 
+font-size: 5px !important;
+border: none; 
+cursor: pointer; 
 }
 
 .funcoes-box i {
-  font-size: 20px !important;
-  display: block; 
+font-size: 20px !important;
+display: block; 
 }
 
 /* Botões dentro do menu */
 .menu-acessibilidade button {
-    padding: 8px;
-    border: none;
-    background-color: #F6F6F6;
-    color: #000000;
-    cursor: pointer;
-    font-size: 1rem;
-    margin-top: 1rem;
-    box-shadow: none !important;
+  padding: 8px;
+  border: none;
+  background-color: #F6F6F6;
+  color: #000000;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 1rem;
+  box-shadow: none !important;
 }
 
 
 /* Estilização do botão quando estiver com o hover */
 #menu-acessibilidade button:hover {
-  transform: scale(1.05);
-  transition: .5s;
-  background-color: #007bff;
-  color: #ffffff;
+transform: scale(1.05);
+transition: .5s;
+background-color: #007bff;
+color: #ffffff;
 }
 
 body.botao-ativado #btnAtivarLeitura{
-    background-color: #007bff2c;
+  background-color: #007bff2c;
 } 
 
 body.menu-ativado .menu-acessibilidade{
-  z-index: 10000; 
+z-index: 10000; 
 }
 
 
 #menu-acessibilidade button:hover i{
-    color: #FFFFFF;
+  color: #FFFFFF;
 }
 
 .report-messages a{
-  font-size: 15px !important;
+font-size: 15px !important;
 }
 
 .report-messages{
-  margin-top: 15px;
+margin-top: 15px;
 }
 
 /* Excluindo o menu de acessibilidade e os botões da escala de cinza */
 .menu-acessibilidade, #btn-acessibilidade, .botao-sair {
-  filter: none !important;
+filter: none !important;
+}
+
+/* botao exit display none */
+
+#button-exit{
+  display: none;
+}
+
+body.menu-ativado #button-exit{
+  position: fixed;
+  top: 55px;
+  left: 19.5rem !important;
+  width: 30px !important; 
+  height: 30px !important;
+  padding: 0; 
+  cursor: pointer;
+  font-size: 32px !important;
+  display: flex; 
+  align-items: center;
+  justify-content: center; 
+  z-index: 11000;
+  transition: .5s;
+  color: #007bff;
 }
 
 
@@ -207,21 +230,21 @@ body.menu-ativado .menu-acessibilidade{
 
 /* Parágrafos */
 body.high-contrast p {
-    color: #FFFFFF; /* Texto branco */
+  color: #FFFFFF; /* Texto branco */
 }
 
 /* Links */
 body.high-contrast a {
-    color: #00FFFF; /* Ciano claro */
-    text-decoration: underline; /* Para indicar claramente links */
+  color: #00FFFF; /* Ciano claro */
+  text-decoration: underline; /* Para indicar claramente links */
 }
 
 body.high-contrast h5.uagb-heading-text {
-    color: #3D9BFF !important; /* Amarelo brilhante para garantir contraste */
+  color: #3D9BFF !important; /* Amarelo brilhante para garantir contraste */
 }
 
 body.high-contrast .uagb-button__link {
-    color: #ffffff !important; /* Amarelo brilhante */
+  color: #ffffff !important; /* Amarelo brilhante */
 }
 
 /* Títulos */
@@ -229,14 +252,14 @@ body.high-contrast h1,
 body.high-contrast h2,
 body.high-contrast h3,
 body.high-contrast h4 {
-    color: #3D9BFF; /* Amarelo brilhante */
+  color: #3D9BFF; /* Amarelo brilhante */
 }
 
 /* Botões */
 body.high-contrast button {
-    background-color: #FFFFFF; /* Fundo branco */
-    color: #000000; /* Texto preto */
-    border: 2px solid #3D9BFF; /* Borda azl */
+  background-color: #FFFFFF; /* Fundo branco */
+  color: #000000; /* Texto preto */
+  border: 2px solid #3D9BFF; /* Borda azl */
 }
 
 /* Imagens */
@@ -244,19 +267,19 @@ body.high-contrast button {
 /* Estilo para alterar o fundo da imagem de background para preto no modo de contraste alto */
 
 body.high-contrast .uagb-container__shape-fill {
-    fill: #000000; /* Cor de preenchimento preta */
+  fill: #000000; /* Cor de preenchimento preta */
 }
 
 /* Se for um fundo de imagem ou de elemento, você pode usar isso */
 body.high-contrast .site-background {
-    background-color: #000000; /* Altera a cor de fundo do site para preto */
+  background-color: #000000; /* Altera a cor de fundo do site para preto */
 }
 
 body.high-contrast img,
 body.high-contrast .wp-block-uagb-image img,
 body.high-contrast .wp-block-uagb-container {
-    background-image: none; /* Remove a imagem de fundo padrão */
-    background-color: #000000; /* Garante que os elementos de fundo sejam alterados para preto */
+  background-image: none; /* Remove a imagem de fundo padrão */
+  background-color: #000000; /* Garante que os elementos de fundo sejam alterados para preto */
 }
 
 
@@ -420,11 +443,11 @@ body.high-contrast ul,
 body.high-contrast var,
 body.high-contrast video,
 body.high-contrast xmp {
-  -moz-user-select: text !important;
-  -webkit-user-select: text !important;
-  background-image: none !important;
-  text-shadow: none !important;
-  user-select: text !important;
+-moz-user-select: text !important;
+-webkit-user-select: text !important;
+background-image: none !important;
+text-shadow: none !important;
+user-select: text !important;
 }
 
 body.high-contrast a,
@@ -582,8 +605,8 @@ body.high-contrast ul,
 body.high-contrast var,
 body.high-contrast video,
 body.high-contrast xmp {
-  background: black !important;
-  background-color: black !important;
+background: black !important;
+background-color: black !important;
 }
 
 
@@ -591,15 +614,15 @@ body.high-contrast xmp {
 
 /* Alterar elementos com fundo em classes comuns */
 body.high-contrast [style*="background-image"] {
-    background-image: none !important; /* Remove imagens de fundo inline */
-    background-color: #000000 !important; /* Substitui por fundo preto */
+  background-image: none !important; /* Remove imagens de fundo inline */
+  background-color: #000000 !important; /* Substitui por fundo preto */
 }
 
 body.high-contrast .has-background,
 body.high-contrast .wp-block-cover,
 body.high-contrast .site-background {
-    background-image: none !important; /* Remove imagens de fundo */
-    background-color: #000000 !important; /* Fundo preto */
+  background-image: none !important; /* Remove imagens de fundo */
+  background-color: #000000 !important; /* Fundo preto */
 }
 
 /* Inputs e Formulários */
@@ -623,58 +646,58 @@ body.high-contrast h6 b,
 body.high-contrast h6 strong,
 body.high-contrast strong,
 body.high-contrast strong span {
-    background-color: #000000; /* Fundo preto */
-    color: #3D9BFF; /* Texto amarelo */
-    border: 1px solid #3D9BFF; /* Borda amarela */
+  background-color: #000000; /* Fundo preto */
+  color: #3D9BFF; /* Texto amarelo */
+  border: 1px solid #3D9BFF; /* Borda amarela */
 }
 
 /* Tabelas */
 body.high-contrast table {
-    background-color: #000000;
-    color: #FFFFFF; 
-    border: 2px solid #3D9BFF; 
+  background-color: #000000;
+  color: #FFFFFF; 
+  border: 2px solid #3D9BFF; 
 }
 body.high-contrast th,
 body.high-contrast td {
-    border: 1px solid #3D9BFF; 
-    padding: 10px;
+  border: 1px solid #3D9BFF; 
+  padding: 10px;
 }
 
 body.high-contrast .menu-acessibilidade{
-    background-color: #000000;
-    color: #fff;
-    border: 2px solid;
-    border-color: #3D9BFF;
+  background-color: #000000;
+  color: #fff;
+  border: 2px solid;
+  border-color: #3D9BFF;
 }
 
 body.high-contrast .menu-acessibilidade button{
-    color: #3D9BFF;
+  color: #3D9BFF;
 }
 
 body.high-contrast .btn-acessibilidade .btnAccess .botao-menu{
-    background-color: black;
-    color: white;
-    border: 2px solid;
-    border-color: #3D9BFF;
+  background-color: black;
+  color: white;
+  border: 2px solid;
+  border-color: #3D9BFF;
 }
 
 body.high-contrast .btn-acessibilidade {
-    background-color: #000;
-    border-color: #000000;
+  background-color: #000;
+  border-color: #000000;
 }
 
 body.high-contrast .menu-acessibilidade button {
-    padding: 8px;
-    border: none;
-    border-radius: 5px;
-    background-color: #000000;
-    color: #3D9BFF;
-    cursor: pointer;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  background-color: #000000;
+  color: #3D9BFF;
+  cursor: pointer;
 }
 
 body.high-contrast .site-footer-focus-item {
-    background-image: none !important; /* Remove imagens de fundo inline */
-    background-color: #000000 !important; /* Substitui por fundo preto */
+  background-image: none !important; /* Remove imagens de fundo inline */
+  background-color: #000000 !important; /* Substitui por fundo preto */
 }
 
 body.high-contrast .site-footer-focus-item,
@@ -683,16 +706,16 @@ body.high-contrast .site-footer-focus-item a,
 body.high-contrast .site-footer-focus-item h2,
 body.high-contrast .site-footer-focus-item h4,
 body.high-contrast .site-footer-focus-item span {
-    color: #3D9BFF !important; /* Força a cor do texto em contraste alto */
+  color: #3D9BFF !important; /* Força a cor do texto em contraste alto */
 }
 
 /* Opcional: ajustar a cor de links */
 body.high-contrast .site-footer-focus-item a {
-    color: #00FF00 !important; /* Cor de destaque para links */
+  color: #00FF00 !important; /* Cor de destaque para links */
 }
 
 body.high-contrast #toggleGrayButton i{
-    color: #3D9BFF;
+  color: #3D9BFF;
 }
 
 body.high-contrast a,
@@ -784,7 +807,7 @@ body.high-contrast ul,
 body.high-contrast var,
 body.high-contrast video,
 body.high-contrast xmp {
-  color: white !important;
+color: white !important;
 }
 
 body.high-contrast abbr,
@@ -805,7 +828,7 @@ body.high-contrast h6 b,
 body.high-contrast h6 strong,
 body.high-contrast strong,
 body.high-contrast strong span {
-  color: #3D9EFF !important;
+color: #3D9EFF !important;
 }
 body.high-contrast address,
 body.high-contrast address span,
@@ -831,10 +854,10 @@ body.high-contrast i,
 body.high-contrast i span,
 body.high-contrast u,
 body.high-contrast u span {
-  color: #3D9BFF !important;
+color: #3D9BFF !important;
 }
 body.high-contrast dt {
-  border-top: thin solid grey !important;
+border-top: thin solid grey !important;
 }
 body.high-contrast h1,
 body.high-contrast h1 a,
@@ -872,18 +895,18 @@ body.high-contrast h6 a b,
 body.high-contrast h6 abbr,
 body.high-contrast h6 center,
 body.high-contrast h6 span {
-  color: #3D9BFF !important;
+color: #3D9BFF !important;
 }
 body.high-contrast img {
-  background: #000000 !important;
-  background-color: #000000 !important;
+background: #000000 !important;
+background-color: #000000 !important;
 }
 body.high-contrast abbr,
 body.high-contrast acronym {
-  border-bottom: 1px dotted !important;
+border-bottom: 1px dotted !important;
 }
 body.high-contrast :focus {
-  outline: thin dotted !important;
+outline: thin dotted !important;
 }
 body.high-contrast a.button,
 body.high-contrast a.button abbr,
@@ -946,7 +969,7 @@ body.high-contrast a:link tt,
 body.high-contrast a:link u,
 body.high-contrast a:link var,
 body.high-contrast div#secondaryNav div#documentNavigation ul.navigationTabs li.tabItem {
-  color: #3D9EFF !important;
+color: #3D9EFF !important;
 }
 body.high-contrast button,
 body.high-contrast input,
@@ -957,12 +980,12 @@ body.high-contrast td,
 body.high-contrast th,
 body.high-contrast tr,
 body.high-contrast tt {
-  border: 1px solid #3D9EFF !important;
+border: 1px solid #3D9EFF !important;
 }
 
 body.high-contrast select {
-  background: #3D9EFF !important;
-  background-color: #3D9EFF !important;
+background: #3D9EFF !important;
+background-color: #3D9EFF !important;
 }
 body.high-contrast a:visited,
 body.high-contrast a:visited abbr,
@@ -995,12 +1018,12 @@ body.high-contrast a:visited tt,
 body.high-contrast a:visited u,
 body.high-contrast a:visited var,
 body.high-contrast div#secondaryNav div#documentNavigation ul.navigationTabs li.tabItem.active {
-  color: #00FFFF !important;
+color: #00FFFF !important;
 }
 body.high-contrast ::selection,
 body.high-contrast ::-moz-selection {
-  background: #4080c0 !important;
-  background-color: #4080c0 !important;
+background: #4080c0 !important;
+background-color: #4080c0 !important;
 }
 body.high-contrast a.button:hover,
 body.high-contrast a.button:hover abbr,
@@ -1092,74 +1115,74 @@ body.high-contrast a:visited:hover strong,
 body.high-contrast a:visited:hover tt,
 body.high-contrast a:visited:hover u,
 body.high-contrast a:visited:hover var {
-  background: #400000 !important;
-  background-color: #400000 !important;
+background: #400000 !important;
+background-color: #400000 !important;
 }
 body.high-contrast body > input#site + div#wrapper span.mk,
 body.high-contrast body > input#site + div#wrapper span.mk b,
 body.high-contrast input[type=reset] {
-  background: #400060 !important;
-  background-color: #400060 !important;
+background: #400060 !important;
+background-color: #400060 !important;
 }
 body.high-contrast div[role="button"],
 body.high-contrast input[type=button],
 body.high-contrast input[type=submit] {
-  background: #600040 !important;
-  background-color: #600040 !important;
+background: #600040 !important;
+background-color: #600040 !important;
 }
 body.high-contrast input[type=search] {
-  -webkit-appearance: textfield !important;
+-webkit-appearance: textfield !important;
 }
 body.high-contrast html button[disabled],
 body.high-contrast html input[disabled],
 body.high-contrast html select[disabled],
 body.high-contrast html textarea[disabled] {
-  background: #404040 !important;
-  background-color: #404040 !important;
+background: #404040 !important;
+background-color: #404040 !important;
 }
 body.high-contrast .menu li a span.label {
-  text-transform: none !important;
+text-transform: none !important;
 }
 body.high-contrast .menu li a span.label,
 body.high-contrast div.jwplayer span.jwcontrolbar,
 body.high-contrast div.jwplayer span.jwcontrols {
-  display: inline !important;
+display: inline !important;
 }
 body.high-contrast a:link.new,
 body.high-contrast a:link.new i,
 body.high-contrast a:link.new b,
 body.high-contrast span.Apple-style-span {
-  color: #3D9EFF !important;
+color: #3D9EFF !important;
 }
 body.high-contrast body.mediawiki img.tex {
-  background: white !important;
-  background-color: white !important;
-  border: white solid 3px !important;
+background: white !important;
+background-color: white !important;
+border: white solid 3px !important;
 }
 body.high-contrast text > tspan:first-letter,
 body.high-contrast text > tspan:first-line {
-  background: inherit !important;
-  background-color: inherit !important;
-  color: inherit !important;
+background: inherit !important;
+background-color: inherit !important;
+color: inherit !important;
 }
 body.high-contrast div.sbtc div.sbsb_a li.sbsb_d div,
 body.high-contrast table.gssb_c tr.gssb_i a,
 body.high-contrast table.gssb_c tr.gssb_i b,
 body.high-contrast table.gssb_c tr.gssb_i span,
 body.high-contrast table.gssb_c tr.gssb_i td {
-  background: #003050 !important;
-  background-color: #003050 !important;
+background: #003050 !important;
+background-color: #003050 !important;
 }
 body.high-contrast img[width="18"][height="18"] {
-  height: 18px !important;
-  width: 18px !important;
+height: 18px !important;
+width: 18px !important;
 }
 body.high-contrast a > span.iconHelp:empty:after {
-  content: "Help" !important;
+content: "Help" !important;
 }
 body.high-contrast div#gmap,
 body.high-contrast div#gmap * {
-  background: initial !important;
+background: initial !important;
 }
 
 
@@ -1183,23 +1206,23 @@ body.high-contrast div#gmap * {
 
 /* Parágrafos */
 body.negative-contrast p {
-    color: #FFFFFF; /* Texto branco */
+  color: #FFFFFF; /* Texto branco */
 }
 
 body.negative-contrast h5.uagb-heading-text {
-    color: #e5ff00 !important; /* Amarelo brilhante para garantir contraste */
+  color: #e5ff00 !important; /* Amarelo brilhante para garantir contraste */
 }
 
 body.negative-contrast .uagb-button__link {
-    color: #e5ff00 !important; /* Amarelo brilhante */
+  color: #e5ff00 !important; /* Amarelo brilhante */
 }
 
 
 
 /* Links */
 body.negative-contrast a {
-    color: #e5ff00; /* amarelo /*
-    text-decoration: underline; /* Para indicar claramente links */
+  color: #e5ff00; /* amarelo /*
+  text-decoration: underline; /* Para indicar claramente links */
 }
 
 /* Títulos */
@@ -1207,22 +1230,22 @@ body.negative-contrast h1,
 body.negative-contrast h2,
 body.negative-contrast h3,
 body.negative-contrast h4 {
-    color: #e5ff00; /* Amarelo brilhante */
+  color: #e5ff00; /* Amarelo brilhante */
 }
 
 /* Botões */
 .negative-contrast button {
-    background-color: #FFFFFF; /* Fundo branco */
-    color: #000000; /* Texto preto */
-    border: 2px solid #e5ff00; /* Borda amarela */
+  background-color: #FFFFFF; /* Fundo branco */
+  color: #000000; /* Texto preto */
+  border: 2px solid #e5ff00; /* Borda amarela */
 }
 
 /* Imagens */
 body.negative-contrast img,
 body.negative-contrast .wp-block-uagb-image img,
 body.negative-contrast .wp-block-uagb-container {
-    background-image: none; /* Remove a imagem de fundo padrão */
-    background-color: #000000; /* Garante que os elementos de fundo sejam alterados para preto */
+  background-image: none; /* Remove a imagem de fundo padrão */
+  background-color: #000000; /* Garante que os elementos de fundo sejam alterados para preto */
 }
 
 /* Alterar imagem de fundo principal */
@@ -1386,11 +1409,11 @@ body.negative-contrast ul,
 body.negative-contrast var,
 body.negative-contrast video,
 body.negative-contrast xmp {
-  -moz-user-select: text !important;
-  -webkit-user-select: text !important;
-  background-image: none !important;
-  text-shadow: none !important;
-  user-select: text !important;
+-moz-user-select: text !important;
+-webkit-user-select: text !important;
+background-image: none !important;
+text-shadow: none !important;
+user-select: text !important;
 }
 
 
@@ -1553,14 +1576,14 @@ body.negative-contrast ul,
 body.negative-contrast var,
 body.negative-contrast video,
 body.negative-contrast xmp {
-  background: black !important;
-  background-color: black !important;
+background: black !important;
+background-color: black !important;
 }
 
 
 body.negative-contrast {
-    background-image: none; /* Remove a imagem de fundo padrão */
-    background-color: #000000; /* Define um fundo preto */
+  background-image: none; /* Remove a imagem de fundo padrão */
+  background-color: #000000; /* Define um fundo preto */
 }
 
 
@@ -1587,7 +1610,7 @@ body.negative-contrast h6 b,
 body.negative-contrast h6 strong,
 body.negative-contrast strong,
 body.negative-contrast strong span {
-  color: #e5ff00 !important;
+color: #e5ff00 !important;
 }
 body.negative-contrast address,
 body.negative-contrast address span,
@@ -1613,10 +1636,10 @@ body.negative-contrast i,
 body.negative-contrast i span,
 body.negative-contrast u,
 body.negative-contrast u span {
-  color: #e5ff00 !important;
+color: #e5ff00 !important;
 }
 body.negative-contrast dt {
-  border-top: thin solid grey !important;
+border-top: thin solid grey !important;
 }
 body.negative-contrast h1,
 body.negative-contrast h1 a,
@@ -1654,18 +1677,18 @@ body.negative-contrast h6 a b,
 body.negative-contrast h6 abbr,
 body.negative-contrast h6 center,
 body.negative-contrast h6 span {
-  color: #e5ff00 !important;
+color: #e5ff00 !important;
 }
 body.negative-contrast img {
-  background: #000000 !important;
-  background-color: #000000 !important;
+background: #000000 !important;
+background-color: #000000 !important;
 }
 body.negative-contrast abbr,
 body.negative-contrast acronym {
-  border-bottom: 1px dotted !important;
+border-bottom: 1px dotted !important;
 }
 body.negative-contrast :focus {
-  outline: thin dotted !important;
+outline: thin dotted !important;
 }
 body.negative-contrast a.button,
 body.negative-contrast a.button abbr,
@@ -1728,7 +1751,7 @@ body.negative-contrast a:link tt,
 body.negative-contrast a:link u,
 body.negative-contrast a:link var,
 body.negative-contrast div#secondaryNav div#documentNavigation ul.navigationTabs li.tabItem {
-  color: #e5ff00 !important;
+color: #e5ff00 !important;
 }
 body.negative-contrast button,
 body.negative-contrast input,
@@ -1739,12 +1762,12 @@ body.negative-contrast td,
 body.negative-contrast th,
 body.negative-contrast tr,
 body.negative-contrast tt {
-  border: 1px solid #e5ff00 !important;
+border: 1px solid #e5ff00 !important;
 }
 
 body.negative-contrast select {
-  background: #e5ff00 !important;
-  background-color: #e5ff00 !important;
+background: #e5ff00 !important;
+background-color: #e5ff00 !important;
 }
 body.negative-contrast a:visited,
 body.negative-contrast a:visited abbr,
@@ -1777,12 +1800,12 @@ body.negative-contrast a:visited tt,
 body.negative-contrast a:visited u,
 body.negative-contrast a:visited var,
 body.negative-contrast div#secondaryNav div#documentNavigation ul.navigationTabs li.tabItem.active {
-  color: #00FFFF !important;
+color: #00FFFF !important;
 }
 body.negative-contrast ::selection,
 body.negative-contrast ::-moz-selection {
-  background: #4080c0 !important;
-  background-color: #4080c0 !important;
+background: #4080c0 !important;
+background-color: #4080c0 !important;
 }
 body.negative-contrast a.button:hover,
 body.negative-contrast a.button:hover abbr,
@@ -1874,74 +1897,74 @@ body.negative-contrast a:visited:hover strong,
 body.negative-contrast a:visited:hover tt,
 body.negative-contrast a:visited:hover u,
 body.negative-contrast a:visited:hover var {
-  background: #400000 !important;
-  background-color: #400000 !important;
+background: #400000 !important;
+background-color: #400000 !important;
 }
 body.negative-contrast body > input#site + div#wrapper span.mk,
 body.negative-contrast body > input#site + div#wrapper span.mk b,
 body.negative-contrast input[type=reset] {
-  background: #400060 !important;
-  background-color: #400060 !important;
+background: #400060 !important;
+background-color: #400060 !important;
 }
 body.negative-contrast div[role="button"],
 body.negative-contrast input[type=button],
 body.negative-contrast input[type=submit] {
-  background: #600040 !important;
-  background-color: #600040 !important;
+background: #600040 !important;
+background-color: #600040 !important;
 }
 body.negative-contrast input[type=search] {
-  -webkit-appearance: textfield !important;
+-webkit-appearance: textfield !important;
 }
 body.negative-contrast html button[disabled],
 body.negative-contrast html input[disabled],
 body.negative-contrast html select[disabled],
 body.negative-contrast html textarea[disabled] {
-  background: #404040 !important;
-  background-color: #404040 !important;
+background: #404040 !important;
+background-color: #404040 !important;
 }
 body.negative-contrast .menu li a span.label {
-  text-transform: none !important;
+text-transform: none !important;
 }
 body.negative-contrast .menu li a span.label,
 body.negative-contrast div.jwplayer span.jwcontrolbar,
 body.negative-contrast div.jwplayer span.jwcontrols {
-  display: inline !important;
+display: inline !important;
 }
 body.negative-contrast a:link.new,
 body.negative-contrast a:link.new i,
 body.negative-contrast a:link.new b,
 body.negative-contrast span.Apple-style-span {
-  color: #3D9EFF !important;
+color: #3D9EFF !important;
 }
 body.negative-contrast body.mediawiki img.tex {
-  background: white !important;
-  background-color: white !important;
-  border: white solid 3px !important;
+background: white !important;
+background-color: white !important;
+border: white solid 3px !important;
 }
 body.negative-contrast text > tspan:first-letter,
 body.negative-contrast text > tspan:first-line {
-  background: inherit !important;
-  background-color: inherit !important;
-  color: inherit !important;
+background: inherit !important;
+background-color: inherit !important;
+color: inherit !important;
 }
 body.negative-contrast div.sbtc div.sbsb_a li.sbsb_d div,
 body.negative-contrast table.gssb_c tr.gssb_i a,
 body.negative-contrast table.gssb_c tr.gssb_i b,
 body.negative-contrast table.gssb_c tr.gssb_i span,
 body.negative-contrast table.gssb_c tr.gssb_i td {
-  background: #003050 !important;
-  background-color: #003050 !important;
+background: #003050 !important;
+background-color: #003050 !important;
 }
 body.negative-contrast img[width="18"][height="18"] {
-  height: 18px !important;
-  width: 18px !important;
+height: 18px !important;
+width: 18px !important;
 }
 body.negative-contrast a > span.iconHelp:empty:after {
-  content: "Help" !important;
+content: "Help" !important;
 }
 body.negative-contrast div#gmap,
 body.negative-contrast div#gmap * {
-  background: initial !important;
+background: initial !important;
 }
 
 
@@ -1965,72 +1988,72 @@ body.negative-contrast div#gmap * {
 
 
 body.negative-contrast [style*="background-image"] {
-    background-image: none !important; /* Remove imagens de fundo inline */
-    background-color: #000000 !important; /* Substitui por fundo preto */
+  background-image: none !important; /* Remove imagens de fundo inline */
+  background-color: #000000 !important; /* Substitui por fundo preto */
 }
 
 body.negative-contrast .has-background,
 body.negative-contrast .wp-block-cover,
 body.negative-contrast .site-background {
-    background-image: none !important; /* Remove imagens de fundo */
-    background-color: #000000 !important; /* Fundo preto */
+  background-image: none !important; /* Remove imagens de fundo */
+  background-color: #000000 !important; /* Fundo preto */
 }
 
 /* Inputs e Formulários */
 body.negative-contrast input,
 body.negative-contrast textarea {
-    background-color: #000000; /* Fundo preto */
-    color: #e5ff00; /* Texto amarelo */
-    border: 1px solid #e5ff00; /* Borda amarela */
+  background-color: #000000; /* Fundo preto */
+  color: #e5ff00; /* Texto amarelo */
+  border: 1px solid #e5ff00; /* Borda amarela */
 }
 
 /* Tabelas */
 body.negative-contrast table {
-    background-color: #000000;
-    color: #FFFFFF; 
-    border: 2px solid #e5ff00; 
+  background-color: #000000;
+  color: #FFFFFF; 
+  border: 2px solid #e5ff00; 
 }
 body.negative-contrast th,
 body.negative-contrast td {
-    border: 1px solid #e5ff00; 
-    padding: 10px;
+  border: 1px solid #e5ff00; 
+  padding: 10px;
 }
 
 body.negative-contrast .menu-acessibilidade {
-    background-color: #000;
-    color: #fff;
-    border: 2px solid;
-    border-color: #e5ff00;
+  background-color: #000;
+  color: #fff;
+  border: 2px solid;
+  border-color: #e5ff00;
 }
 
 body.negative-contrast .menu-acessibilidade button {
-    color: #e5ff00;
+  color: #e5ff00;
 }
 
 body.negative-contrast .btn-acessibilidade .btnAccess .botao-menu {
-    background-color: black;
-    color: white;
-    border: 2px solid;
-    border-color: #e5ff00;
+  background-color: black;
+  color: white;
+  border: 2px solid;
+  border-color: #e5ff00;
 }
 
 body.negative-contrast .btn-acessibilidade {
-    background-color: #000;
-    border-color: #000000;
+  background-color: #000;
+  border-color: #000000;
 }
 
 body.negative-contrast .menu-acessibilidade button {
-    padding: 8px;
-    border: none;
-    border-radius: 5px;
-    background-color: #000000;
-    color: #e5ff00;
-    cursor: pointer;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  background-color: #000000;
+  color: #e5ff00;
+  cursor: pointer;
 }
 
 body.negative-contrast .site-footer-focus-item {
-    background-image: none !important; /* Remove imagens de fundo inline */
-    background-color: #000000 !important; /* Substitui por fundo preto */
+  background-image: none !important; /* Remove imagens de fundo inline */
+  background-color: #000000 !important; /* Substitui por fundo preto */
 }
 
 body.negative-contrast .site-footer-focus-item,
@@ -2039,39 +2062,39 @@ body.negative-contrast .site-footer-focus-item a,
 body.negative-contrast .site-footer-focus-item h2,
 body.negative-contrast .site-footer-focus-item h4,
 body.negative-contrast .site-footer-focus-item span {
-    color: #e5ff00 !important; /* Força a cor do texto em contraste alto */
+  color: #e5ff00 !important; /* Força a cor do texto em contraste alto */
 }
 
 /* Opcional: ajustar a cor de links */
 body.negative-contrast .site-footer-focus-item a {
-    color: #00FF00 !important; /* Cor de destaque para links */
+  color: #00FF00 !important; /* Cor de destaque para links */
 }
 
 body.negative-contrast #toggleGrayButton i {
-    color: #e5ff00;
+  color: #e5ff00;
 }
 
 
 
 
 
- /* escala de cinza */
+/* escala de cinza */
 
- body.tons-cinza{
-    filter: grayscale(100%);
+body.tons-cinza{
+  filter: grayscale(100%);
 }
 
 body.tons-cinza .menu-acessibilidade{
-    position: fixed !important;
-    filter: none !important;
+  position: fixed !important;
+  filter: none !important;
 }
 
 .block #menu-acessibilidade button {
-    display: block
+  display: block
 }
 
 #GrayScale{
-    color: black;
+  color: black;
 }
 
 
@@ -2086,8 +2109,8 @@ body.link-sub .menu-link,
 body.link-sub .uagb-buttons-repeater,
 body.link-sub button[onclick],
 body.link-sub a:hover {
-    text-decoration: underline !important;
-    text-decoration-color: #ff0000 !important; /* Cor do sublinhado em vermelho */
+  text-decoration: underline !important;
+  text-decoration-color: #ff0000 !important; /* Cor do sublinhado em vermelho */
 }
 
 
@@ -2099,18 +2122,18 @@ body.link-sub .menu-link:hover,
 body.link-sub .uagb-buttons-repeater:hover,
 body.link-sub button[onclick]:hover,
 body.link-sub .wp-block-image a:hover {
-    text-decoration: underline !important;
+  text-decoration: underline !important;
 }
 
 /* Aplica sublinhado a todos os links quando a classe 'link-sub' é aplicada ao body */
 body.link-sub a {
-    text-decoration: underline !important;
-    text-decoration-color: #ff0000 !important; /* Cor do sublinhado em vermelho */
+  text-decoration: underline !important;
+  text-decoration-color: #ff0000 !important; /* Cor do sublinhado em vermelho */
 }
 
 /* Opcional: aplica o sublinhado quando o mouse passa sobre o link */
 body.link-sub a:hover {
-    text-decoration: underline !important;
+  text-decoration: underline !important;
 }
 
 
@@ -2146,17 +2169,17 @@ body.font-leg button,
 body.font-leg li,
 body.font-leg span,
 body.font-leg div{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, Helvetica, sans-serif !important;
-    font-weight: 800;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, Helvetica, sans-serif !important;
+  font-weight: 800;
 }
 
 body.font-leg h1{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, Helvetica, sans-serif !important;
-    font-weight: 800;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, Helvetica, sans-serif !important;
+  font-weight: 800;
 }
 
 body.font-leg button{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, Helvetica, sans-serif !important;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, Helvetica, sans-serif !important;
 }
 
 
@@ -2170,16 +2193,16 @@ body.font-leg button{
 
 
 #LOGO-DSPD{
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
-  @keyframes float {
-    0%{
-        top: 0;
-    }
-    100%{
-        top: 10px;
-    }
+@keyframes float {
+  0%{
+      top: 0;
+  }
+  100%{
+      top: 10px;
+  }
 }
 
 
@@ -2190,32 +2213,28 @@ body.font-leg button{
 
 
 
-/* botao exit display none */
 
-#button-exit{
-    display: none;
-}
 
 /* responsividade para notebooks */
 
 
 @media screen and (min-width: 1441px) and (max-width: 1920px) {
-  .menu-acessibilidade {
-    position: fixed !important;
-    top: 80px;
-    left: 0;
-    width: 60vh; 
-    height: 88vh;
-    background-color: #F6F6F6;
-    padding: 15px;
-    border-radius: 0 20px 0 0;
-    display: flex;
-    gap: 10px;
-    z-index: 1000;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid;
-    border-color: #0D99FF;
+.menu-acessibilidade {
+  position: fixed !important;
+  top: 80px;
+  left: 0;
+  width: 60vh; 
+  height: 88vh;
+  background-color: #F6F6F6;
+  padding: 15px;
+  border-radius: 0 20px 0 0;
+  display: flex;
+  gap: 10px;
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid;
+  border-color: #0D99FF;
 }
 
 
@@ -2227,253 +2246,46 @@ body.font-leg button{
 
 /* Para tablets no modo retrato */
 @media (min-width: 1401px) and (max-width: 1440px) {
-    .menu-acessibilidade {
-        position: fixed; 
-        top: 40px; 
-        background-color: #F6F6F6; 
-        display: flex; 
-        justify-content: center;
-        align-items: center;
-        z-index: 1000; 
-        max-width: 340px;
-        border-radius: 0 20px 0 0;
-    }
+  .menu-acessibilidade {
+      position: fixed; 
+      top: 40px; 
+      background-color: #F6F6F6; 
+      display: flex; 
+      justify-content: center;
+      align-items: center;
+      z-index: 1000; 
+      max-width: 340px;
+      border-radius: 0 20px 0 0;
+  }
 
-    .bloco-funcoes button{
-        font-size: 15px;
-        margin: 5px;
-    }
+  .bloco-funcoes button{
+      font-size: 15px;
+      margin: 5px;
+  }
 
-    
+  
 }
 
 
 /* responsividade celulares */
 
 @media screen and (max-width: 919px) {
-    .messageBoxAccess{
-        position: absolute;
-        top: 10px;
-        left: 60px;
-        width: 10rem;
-        background-color: #ffffff;
-        padding: 15px;
-        border-radius: 0 10px 10px;
-        display: none;
-        gap: 10px;
-        z-index: 1000;
-        color: black;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    }
-
-    
-
-    .title-menu{
-      font-size: 15px !important;
-    }
-
-    .block{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .bloco-funcoes button{
-        width: 9rem;
-        height: 5.5rem;
-        background-color: #ffffff;
-        margin: 10px;
-        border-radius: 5px;
-        white-space: nowrap;
-    }
-
-    .btnAccess{
-        display: flex !important;
-        justify-content: center !important;
-        align-items: center !important;
-    }
-
-
-
-    .menu-acessibilidade {
-      max-height: 100vh; /* Limita a altura a 100% da altura da tela */
-      position: fixed;
-      top: 45px;
-      left: 20px;
-      width: 100vw; 
-      height: auto;  /* Ajusta a altura automaticamente conforme o conteúdo */
-      background-color: #EFF1F5; 
-      display: flex;
-      flex-direction: column; /* Garante que o conteúdo vá para baixo em vez de para os lados */
-      justify-content: flex-start; /* Alinha o conteúdo no topo */
-      align-items: center;
-      z-index: 1000;
-      max-width: 340px;
-      border-radius: 10px;
-      border: 2px solid;
-      border-color: #0D99FF;
-      overflow-y: auto; /* Exibe a barra de rolagem somente quando necessário */
-      overflow-x: hidden; /* Desabilita a rolagem horizontal */
-  }
-  
-  /* Barra de rolagem específica para o menu de acessibilidade */
-  .menu-acessibilidade::-webkit-scrollbar {
-      width: 10px;  /* Largura da barra de rolagem */
-  }
-  
-  .menu-acessibilidade::-webkit-scrollbar-thumb {
-      background-color: #0D99FF;  /* Cor da parte que o usuário pode arrastar */
-      border-radius: 5px;
-      border: 2px solid #fff;  /* Borda branca ao redor da parte que o usuário arrasta */
-  }
-  
-  .menu-acessibilidade::-webkit-scrollbar-track {
-      background-color: #f1f1f1;  /* Cor de fundo da área da barra de rolagem */
-  }
-  
-    .btn-acessibilidade .btnAccess{
-        position: fixed;
-        top: 150px;
-        width: 50px; 
-        height: 50px;
-        padding: 0; 
-        color: #fff;
-        cursor: pointer;
-        font-size: 18px;
-        display: flex; 
-        align-items: center;
-        justify-content: center; 
-        z-index: 1001;
-        transition: .5s;
-    }
-
-    .botao-menu{
-      width: 50px;
-      height: 50px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: #007bff;
-      border-radius: 20%;
-      transition: .5s;
-    }
-    
-    .botao-menu:hover{
-      transform: scale(1.05);
-    }
-
-    .bloco-funcoes{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: none !important;
-    }
-
-    .funcoes-box{
-        background: none !important;
-        background-color: transparent !important;
-    }
-
-    body.menu-ativado  .btn-acessibilidade .btnAccess{
-        position: fixed;
-        top: 20px;
-        z-index: 11100;
-    }
-
-    body.menu-ativado .menu-acessibilidade{
-        z-index: 10000; 
-    }
-
-    body.menu-ativado #button-exit{
-        position: fixed;
-        top: 55px;
-        left: 21rem !important;
-        width: 30px; 
-        height: 30px;
-        padding: 0; 
-        cursor: pointer;
-        font-size: 32px !important;
-        display: flex; 
-        align-items: center;
-        justify-content: center; 
-        z-index: 11000;
-        transition: .5s;
-        color: #007bff;
-    }
-
-    body.negative-contrast #button-exit{
-        color: #e5ff00;
-    }
-
-    body.high-contrast > div{
-        background: black !important;
-        background-color: black !important;
-    }
-
-    .funcoes-box button {
-        display: flex; 
-        flex-direction: column; 
-        align-items: center;
-        justify-content: center; 
-        text-align: center; 
-        padding: 10px; 
-        font-size: 10px;
-        border: none; 
-        cursor: pointer; 
-    }
-    
-    .funcoes-box i {
-        font-size: 20px;
-        margin-bottom: 5px;
-        display: block; 
-    }
-
-    body.high-contrast .funcoes-box{
-        background: none !important;
-        background-color: transparent !important;
-    }
-
-    body.high-contrast .bloco-funcoes{
-        background: none !important;
-        background-color: transparent !important;
-    }
-
-    body.negative-contrast .funcoes-box{
-        background: none !important;
-        background-color: transparent !important;
-    }
-
-    body.negative-contrast .bloco-funcoes{
-        background: none !important;
-        background-color: transparent !important;
-    }
-
-    @media only screen and (orientation: landscape) {
-      #button-exit{
-        left: 10rem;
-      }
-    }
-
-
-    
-
-}
-
-@media screen and (min-width: 920px) {
   .messageBoxAccess{
-    position: absolute;
-    top: 10px;
-    left: 60px;
-    width: 15rem;
-    background-color: #ffffff;
-    padding: 15px;
-    border-radius: 0 10px 10px;
-    display: none;
-    gap: 10px;
-    z-index: 1000;
-    color: black;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
+      position: absolute;
+      top: 10px;
+      left: 60px;
+      width: 10rem;
+      background-color: #ffffff;
+      padding: 15px;
+      border-radius: 0 10px 10px;
+      display: none;
+      gap: 10px;
+      z-index: 1000;
+      color: black;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
+  
 
   .title-menu{
     font-size: 15px !important;
@@ -2491,7 +2303,7 @@ body.font-leg button{
       background-color: #ffffff;
       margin: 10px;
       border-radius: 5px;
-      white-space: nowrap;
+      
   }
 
   .btnAccess{
@@ -2521,22 +2333,22 @@ body.font-leg button{
     border-color: #0D99FF;
     overflow-y: auto; /* Exibe a barra de rolagem somente quando necessário */
     overflow-x: hidden; /* Desabilita a rolagem horizontal */
-  }
+}
 
-  /* Barra de rolagem específica para o menu de acessibilidade */
-  .menu-acessibilidade::-webkit-scrollbar {
+/* Barra de rolagem específica para o menu de acessibilidade */
+.menu-acessibilidade::-webkit-scrollbar {
     width: 10px;  /* Largura da barra de rolagem */
-  }
+}
 
-  .menu-acessibilidade::-webkit-scrollbar-thumb {
+.menu-acessibilidade::-webkit-scrollbar-thumb {
     background-color: #0D99FF;  /* Cor da parte que o usuário pode arrastar */
     border-radius: 5px;
     border: 2px solid #fff;  /* Borda branca ao redor da parte que o usuário arrasta */
-  }
+}
 
-  .menu-acessibilidade::-webkit-scrollbar-track {
+.menu-acessibilidade::-webkit-scrollbar-track {
     background-color: #f1f1f1;  /* Cor de fundo da área da barra de rolagem */
-  }
+}
 
   .btn-acessibilidade .btnAccess{
       position: fixed;
@@ -2564,7 +2376,7 @@ body.font-leg button{
     border-radius: 20%;
     transition: .5s;
   }
-
+  
   .botao-menu:hover{
     transform: scale(1.05);
   }
@@ -2594,9 +2406,9 @@ body.font-leg button{
   body.menu-ativado #button-exit{
       position: fixed;
       top: 55px;
-      left: 19rem !important;
-      width: 30px !important; 
-      height: 30px !important;
+      left: 21.5rem !important;
+      width: 30px; 
+      height: 30px;
       padding: 0; 
       cursor: pointer;
       font-size: 32px !important;
@@ -2628,7 +2440,7 @@ body.font-leg button{
       border: none; 
       cursor: pointer; 
   }
-
+  
   .funcoes-box i {
       font-size: 20px;
       margin-bottom: 5px;
@@ -2654,6 +2466,213 @@ body.font-leg button{
       background: none !important;
       background-color: transparent !important;
   }
+
+  @media only screen and (orientation: landscape) {
+    #button-exit{
+      left: 10rem;
+    }
+  }
+
+
+  
+
+}
+
+@media screen and (min-width: 920px) {
+.messageBoxAccess{
+  position: absolute;
+  top: 10px;
+  left: 60px;
+  width: 15rem;
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 0 10px 10px;
+  display: none;
+  gap: 10px;
+  z-index: 1000;
+  color: black;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.title-menu{
+  font-size: 15px !important;
+}
+
+.block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bloco-funcoes button{
+    width: 9rem;
+    height: 5.5rem;
+    background-color: #ffffff;
+    margin: 10px;
+    border-radius: 5px;
+    font-size: 5px !important;
+}
+
+.btnAccess{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+
+
+.menu-acessibilidade {
+  max-height: 100vh; /* Limita a altura a 100% da altura da tela */
+  position: fixed;
+  top: 45px;
+  left: 20px;
+  width: 100vw; 
+  height: auto;  /* Ajusta a altura automaticamente conforme o conteúdo */
+  background-color: #EFF1F5; 
+  display: flex;
+  flex-direction: column; /* Garante que o conteúdo vá para baixo em vez de para os lados */
+  justify-content: flex-start; /* Alinha o conteúdo no topo */
+  align-items: center;
+  z-index: 1000;
+  max-width: 340px;
+  border-radius: 10px;
+  border: 2px solid;
+  border-color: #0D99FF;
+  overflow-y: auto; /* Exibe a barra de rolagem somente quando necessário */
+  overflow-x: hidden; /* Desabilita a rolagem horizontal */
+}
+
+/* Barra de rolagem específica para o menu de acessibilidade */
+.menu-acessibilidade::-webkit-scrollbar {
+  width: 10px;  /* Largura da barra de rolagem */
+}
+
+.menu-acessibilidade::-webkit-scrollbar-thumb {
+  background-color: #0D99FF;  /* Cor da parte que o usuário pode arrastar */
+  border-radius: 5px;
+  border: 2px solid #fff;  /* Borda branca ao redor da parte que o usuário arrasta */
+}
+
+.menu-acessibilidade::-webkit-scrollbar-track {
+  background-color: #f1f1f1;  /* Cor de fundo da área da barra de rolagem */
+}
+
+.btn-acessibilidade .btnAccess{
+    position: fixed;
+    top: 150px;
+    width: 50px; 
+    height: 50px;
+    padding: 0; 
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex; 
+    align-items: center;
+    justify-content: center; 
+    z-index: 1001;
+    transition: .5s;
+}
+
+.botao-menu{
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #007bff;
+  border-radius: 20%;
+  transition: .5s;
+}
+
+.botao-menu:hover{
+  transform: scale(1.05);
+}
+
+.bloco-funcoes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none !important;
+}
+
+.funcoes-box{
+    background: none !important;
+    background-color: transparent !important;
+}
+
+body.menu-ativado  .btn-acessibilidade .btnAccess{
+    position: fixed;
+    top: 20px;
+    z-index: 11100;
+}
+
+body.menu-ativado .menu-acessibilidade{
+    z-index: 10000; 
+}
+
+body.menu-ativado #button-exit{
+    position: fixed;
+    top: 55px;
+    left: 19.5rem !important;
+    width: 30px !important; 
+    height: 30px !important;
+    padding: 0; 
+    cursor: pointer;
+    font-size: 32px !important;
+    display: flex; 
+    align-items: center;
+    justify-content: center; 
+    z-index: 11000;
+    transition: .5s;
+    color: #007bff;
+}
+
+body.negative-contrast #button-exit{
+    color: #e5ff00;
+}
+
+body.high-contrast > div{
+    background: black !important;
+    background-color: black !important;
+}
+
+.funcoes-box button {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center; 
+    text-align: center; 
+    padding: 10px; 
+    font-size: 10px;
+    border: none; 
+    cursor: pointer; 
+}
+
+.funcoes-box i {
+    font-size: 20px;
+    margin-bottom: 5px;
+    display: block; 
+}
+
+body.high-contrast .funcoes-box{
+    background: none !important;
+    background-color: transparent !important;
+}
+
+body.high-contrast .bloco-funcoes{
+    background: none !important;
+    background-color: transparent !important;
+}
+
+body.negative-contrast .funcoes-box{
+    background: none !important;
+    background-color: transparent !important;
+}
+
+body.negative-contrast .bloco-funcoes{
+    background: none !important;
+    background-color: transparent !important;
+}
 
 
 
