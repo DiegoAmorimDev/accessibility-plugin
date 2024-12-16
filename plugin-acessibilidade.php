@@ -12,48 +12,55 @@ if (!defined('ABSPATH')) {
 }
 
 function plugin_acessibilidade_scripts() {
-    // Versão dinâmica baseada na última modificação do arquivo (para evitar cache)
+    
     $version_css = filemtime(plugin_dir_path(__FILE__) . 'css/estilo.css');
     $version_js = filemtime(plugin_dir_path(__FILE__) . 'js/script.js');
 
-    // Inclui CSS com query string
+  
     wp_enqueue_style('plugin-acessibilidade-style', plugins_url('css/estilo.css', __FILE__), array(), $version_css);
 
-    // Inclui JS com query string
+   
     wp_enqueue_script('plugin-acessibilidade-script', plugins_url('js/script.js', __FILE__), array('jquery'), $version_js, true);
 }
 add_action('wp_enqueue_scripts', 'plugin_acessibilidade_scripts');
 
 
 function plugin_acessibilidade_carregar_bootstrap() {
-    // CSS do Bootstrap
+    
     wp_enqueue_style('bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css');
 
-    // Opcional: Se precisar de todo o framework Bootstrap (não apenas os ícones)
+    
     wp_enqueue_style('bootstrap-framework-css', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css');
     wp_enqueue_script('bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js', array('jquery'), null, true);
 }
 add_action('wp_enqueue_scripts', 'plugin_acessibilidade_carregar_bootstrap');
 
 
-// Função para exibir o plugin em todas as páginas
-function exibir_plugin_acessibilidade() {
+// Remover a linha que adiciona o botão no rodapé
+// add_action('wp_footer', 'exibir_plugin_acessibilidade');
+
+// Usar wp_body_open para adicionar o botão corretamente em todas as páginas
+// Remover a linha que adiciona o botão no rodapé
+// add_action('wp_footer', 'exibir_plugin_acessibilidade');
+
+// Usar wp_body_open para adicionar o botão corretamente em todas as páginas
+function exibir_plugin_acessibilidade_no_body() {
     ?>
-    <button id="btn-acessibilidade" class="btn-acessibilidade">
+    
         <div class="btnAccess" id="btnAccess">
             <div class="botao-menu" id="botao-menu">
-                <i class="bi bi-universal-access-circle"></i>
+            <button id="btn-acessibilidade" class="btn-acessibilidade"> <i class="bi bi-universal-access-circle"></i> </button>
             </div>
             <div class="botao-sair">
-                <i class="bi bi-box-arrow-left" id="button-exit"></i>
+               <button id="button-left"> <i class="bi bi-box-arrow-left" id="button-exit"></i> </button> 
             </div>
         </div>
-    </button>
+    
 
     <div class="block">
         <div id="menu-acessibilidade" class="menu-acessibilidade" style="display: none;">
             <div class="flex">
-                    <p class="title-menu">Uepa Acessível</p>
+                <p class="title-menu">UEPA Acessível</p>
             </div>
             <div class="bloco-opcoes">
                 <div class="bloco-funcoes">
@@ -101,11 +108,10 @@ function exibir_plugin_acessibilidade() {
             <div class="flex">
                 <a href="https://dspd.uepa.br/" target="_blank"><img id="LOGO-DSPD" src="wp-content/plugins/uepa-acessivel-wp - Copia/img/DSPD-LOGO.png" alt="LOGO-DSPD"></a>
             </div>
-
-        
         </div>
     </div>
     <?php
 }
-add_action('wp_footer', 'exibir_plugin_acessibilidade');
+add_action('wp_body_open', 'exibir_plugin_acessibilidade_no_body');
+
 

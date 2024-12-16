@@ -107,7 +107,7 @@ function resetConfig() {
         const botao = document.getElementById('btnAtivarLeitura');
         botao.innerHTML = `
             <i class="bi bi-soundwave"></i> 
-            Ativar Leitura
+            Leia a Página
         `;
         lerTexto("A leitura foi desativada.");
     }

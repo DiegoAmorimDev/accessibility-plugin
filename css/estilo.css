@@ -13,15 +13,50 @@ align-items: center;
 }
 
 
-.botao-menu{
-width: 50px;
-height: 50px;
-display: flex;
-align-items: center;
-justify-content: center;
-background-color: #007bff;
-border-radius: 20%;
-transition: .5s;
+
+
+.btnAccess .botao-menu {
+  position: fixed;
+  top: 120px;
+  left: 20px;
+  padding: 0; /* Remova o padding para evitar distorções */
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex; /* Centraliza o conteúdo do botão */
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: center; /* Centraliza horizontalmente */
+  z-index: 1001;
+  transition: .5s;
+}
+
+.botao-menu button{
+  width: 60px !important; /* Largura fixa para garantir o formato circular */
+  height: 60px !important; /* Altura igual à largura */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1887FE;
+  border-radius: 50%;
+  transition: .5s;
+}
+
+#btn-acessibilidade{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#btn-acessibilidade i{
+  font-size: 45px;
+}
+
+.btnAccess{
+  background-color: transparent !important;
+}
+
+.btnAccess .botao-menu{
+  background-color: transparent !important;
 }
 
 /* Excluir a alteração de tamanho de fonte para o menu de acessibilidade */
@@ -29,8 +64,25 @@ transition: .5s;
 font-size: initial !important;
 }
 
+
 .botao-menu:hover{
 transform: scale(1.05);
+}
+
+.botao-sair{
+  background: none !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#button-left{
+  background: none !important;
+  box-shadow: none !important;
+}
+
+.botao-sair .button i{
+  background-color: transparent !important;
 }
 
 .title-menu{
@@ -53,26 +105,8 @@ font-size: 20px !important;
 }
 
 
-.btn-acessibilidade .btnAccess{
-  position: fixed;
-  top: 120px;
-  left: 20px;
-  width: 55px; /* Largura fixa para garantir o formato circular */
-  height: 55px; /* Altura igual à largura */
-  padding: 0; /* Remova o padding para evitar distorções */
-  color: #fff;
-  border-radius: 20%; /* Define o formato circular */
-  cursor: pointer;
-  font-size: 18px;
-  display: flex; /* Centraliza o conteúdo do botão */
-  align-items: center; /* Centraliza verticalmente */
-  justify-content: center; /* Centraliza horizontalmente */
-  z-index: 1001;
-  transition: .5s;
-}
-
 @media screen and (min-width: 768px) {
-body.menu-ativado  .btn-acessibilidade .btnAccess{
+body.menu-ativado  .btnAccess .botao-menu{
   position: fixed;
   top: 10px;
   z-index: 11100;
@@ -195,20 +229,20 @@ margin-top: 15px;
 }
 
 /* Excluindo o menu de acessibilidade e os botões da escala de cinza */
-.menu-acessibilidade, #btn-acessibilidade, .botao-sair {
+.menu-acessibilidade, #btn-acessibilidade, .botao-sair button {
 filter: none !important;
 }
 
 /* botao exit display none */
 
-#button-exit{
+.botao-sair button{
   display: none;
 }
 
-body.menu-ativado #button-exit{
+body.menu-ativado .botao-sair button{
   position: fixed;
   top: 55px;
-  left: 19.5rem !important;
+  left: 19.5rem;
   width: 30px !important; 
   height: 30px !important;
   padding: 0; 
@@ -674,17 +708,13 @@ body.high-contrast .menu-acessibilidade button{
   color: #3D9BFF;
 }
 
-body.high-contrast .btn-acessibilidade .btnAccess .botao-menu{
+body.high-contrast .botao-menu button{
   background-color: black;
   color: white;
   border: 2px solid;
   border-color: #3D9BFF;
 }
 
-body.high-contrast .btn-acessibilidade {
-  background-color: #000;
-  border-color: #000000;
-}
 
 body.high-contrast .menu-acessibilidade button {
   padding: 8px;
@@ -2030,17 +2060,14 @@ body.negative-contrast .menu-acessibilidade button {
   color: #e5ff00;
 }
 
-body.negative-contrast .btn-acessibilidade .btnAccess .botao-menu {
+body.negative-contrast .botao-menu button{
   background-color: black;
   color: white;
   border: 2px solid;
   border-color: #e5ff00;
 }
 
-body.negative-contrast .btn-acessibilidade {
-  background-color: #000;
-  border-color: #000000;
-}
+
 
 body.negative-contrast .menu-acessibilidade button {
   padding: 8px;
@@ -2218,53 +2245,199 @@ body.font-leg button{
 /* responsividade para notebooks */
 
 
-@media screen and (min-width: 1441px) and (max-width: 1920px) {
-.menu-acessibilidade {
-  position: fixed !important;
-  top: 80px;
-  left: 0;
-  width: 60vh; 
-  height: 88vh;
-  background-color: #F6F6F6;
-  padding: 15px;
-  border-radius: 0 20px 0 0;
-  display: flex;
-  gap: 10px;
-  z-index: 1000;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid;
-  border-color: #0D99FF;
-}
-
-
-
-}
-
-
-
-
-/* Para tablets no modo retrato */
-@media (min-width: 1401px) and (max-width: 1440px) {
-  .menu-acessibilidade {
-      position: fixed; 
-      top: 40px; 
-      background-color: #F6F6F6; 
-      display: flex; 
+@media screen and (min-width: 1402px) and (max-width: 1920px) {
+  .messageBoxAccess{
+    position: absolute;
+    top: 10px;
+    left: 60px;
+    width: 15rem;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 0 10px 10px;
+    display: none;
+    gap: 10px;
+    z-index: 1000;
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  
+  .title-menu{
+    font-size: 15px !important;
+  }
+  
+  .block{
+      display: flex;
       justify-content: center;
       align-items: center;
-      z-index: 1000; 
-      max-width: 340px;
-      border-radius: 0 20px 0 0;
   }
-
-  .bloco-funcoes button{
-      font-size: 15px;
-      margin: 5px;
-  }
-
   
+  .bloco-funcoes button{
+      width: 9rem;
+      height: 5.5rem;
+      background-color: #ffffff;
+      margin: 10px;
+      border-radius: 5px;
+      font-size: 5px !important;
+  }
+  
+  .btnAccess{
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+  }
+  
+  
+  
+  .menu-acessibilidade {
+    max-height: 100vh; /* Limita a altura a 100% da altura da tela */
+    position: fixed;
+    top: 45px;
+    left: 20px;
+    width: 100vw; 
+    height: auto;  /* Ajusta a altura automaticamente conforme o conteúdo */
+    background-color: #EFF1F5; 
+    display: flex;
+    flex-direction: column; /* Garante que o conteúdo vá para baixo em vez de para os lados */
+    justify-content: flex-start; /* Alinha o conteúdo no topo */
+    align-items: center;
+    z-index: 1000;
+    max-width: 340px;
+    border-radius: 10px;
+    border: 2px solid;
+    border-color: #0D99FF;
+    overflow-y: auto; /* Exibe a barra de rolagem somente quando necessário */
+    overflow-x: hidden; /* Desabilita a rolagem horizontal */
+  }
+  
+  /* Barra de rolagem específica para o menu de acessibilidade */
+  .menu-acessibilidade::-webkit-scrollbar {
+    width: 10px;  /* Largura da barra de rolagem */
+  }
+  
+  .menu-acessibilidade::-webkit-scrollbar-thumb {
+    background-color: #0D99FF;  /* Cor da parte que o usuário pode arrastar */
+    border-radius: 5px;
+    border: 2px solid #fff;  /* Borda branca ao redor da parte que o usuário arrasta */
+  }
+  
+  .menu-acessibilidade::-webkit-scrollbar-track {
+    background-color: #f1f1f1;  /* Cor de fundo da área da barra de rolagem */
+  }
+  
+  .btnAccess .botao-menu{
+      position: fixed;
+      top: 150px;
+      width: 50px; 
+      height: 50px;
+      padding: 0; 
+      color: #fff;
+      cursor: pointer;
+      font-size: 18px;
+      display: flex; 
+      align-items: center;
+      justify-content: center; 
+      z-index: 1001;
+      transition: .5s;
+  }
+  
+  
+  .botao-menu:hover{
+    transform: scale(1.05);
+  }
+  
+  .bloco-funcoes{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: none !important;
+  }
+  
+  .funcoes-box{
+      background: none !important;
+      background-color: transparent !important;
+  }
+  
+  body.menu-ativado  .btnAccess .botao-menu{
+      position: fixed;
+      top: 20px;
+      z-index: 11100;
+  }
+  
+  body.menu-ativado .menu-acessibilidade{
+      z-index: 10000; 
+  }
+  
+  body.menu-ativado .botao-sair button{
+      position: fixed;
+      top: 55px;
+      left: 19.5rem;
+      width: 30px !important; 
+      height: 30px !important;
+      padding: 0; 
+      cursor: pointer;
+      font-size: 32px !important;
+      display: flex; 
+      align-items: center;
+      justify-content: center; 
+      z-index: 11000;
+      transition: .5s;
+      color: #007bff;
+  }
+  
+  body.negative-contrast .botao-sair button{
+      color: #e5ff00;
+  }
+  
+  body.high-contrast > div{
+      background: black !important;
+      background-color: black !important;
+  }
+  
+  .funcoes-box button {
+      display: flex; 
+      flex-direction: column; 
+      align-items: center;
+      justify-content: center; 
+      text-align: center; 
+      padding: 10px; 
+      font-size: 10px;
+      border: none; 
+      cursor: pointer; 
+  }
+  
+  .funcoes-box i {
+      font-size: 20px;
+      margin-bottom: 5px;
+      display: block; 
+  }
+  
+  body.high-contrast .funcoes-box{
+      background: none !important;
+      background-color: transparent !important;
+  }
+  
+  body.high-contrast .bloco-funcoes{
+      background: none !important;
+      background-color: transparent !important;
+  }
+  
+  body.negative-contrast .funcoes-box{
+      background: none !important;
+      background-color: transparent !important;
+  }
+  
+  body.negative-contrast .bloco-funcoes{
+      background: none !important;
+      background-color: transparent !important;
+  }
+  
+
+
 }
+
+
+
+
 
 
 /* responsividade celulares */
@@ -2298,12 +2471,12 @@ body.font-leg button{
   }
 
   .bloco-funcoes button{
-      width: 9rem;
+      width: 10rem !important;
       height: 5.5rem;
       background-color: #ffffff;
       margin: 10px;
       border-radius: 5px;
-      
+      white-space: nowrap !important;
   }
 
   .btnAccess{
@@ -2350,7 +2523,7 @@ body.font-leg button{
     background-color: #f1f1f1;  /* Cor de fundo da área da barra de rolagem */
 }
 
-  .btn-acessibilidade .btnAccess{
+  .btnAccess .botao-menu{
       position: fixed;
       top: 150px;
       width: 50px; 
@@ -2364,17 +2537,6 @@ body.font-leg button{
       justify-content: center; 
       z-index: 1001;
       transition: .5s;
-  }
-
-  .botao-menu{
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #007bff;
-    border-radius: 20%;
-    transition: .5s;
   }
   
   .botao-menu:hover{
@@ -2393,7 +2555,7 @@ body.font-leg button{
       background-color: transparent !important;
   }
 
-  body.menu-ativado  .btn-acessibilidade .btnAccess{
+  body.menu-ativado .btnAccess .botao-menu{
       position: fixed;
       top: 20px;
       z-index: 11100;
@@ -2403,10 +2565,10 @@ body.font-leg button{
       z-index: 10000; 
   }
 
-  body.menu-ativado #button-exit{
+  body.menu-ativado .botao-sair button{
       position: fixed;
       top: 55px;
-      left: 21.5rem !important;
+      left: 21.5rem;
       width: 30px; 
       height: 30px;
       padding: 0; 
@@ -2420,7 +2582,7 @@ body.font-leg button{
       color: #007bff;
   }
 
-  body.negative-contrast #button-exit{
+  body.negative-contrast .botao-sair button{
       color: #e5ff00;
   }
 
@@ -2468,9 +2630,13 @@ body.font-leg button{
   }
 
   @media only screen and (orientation: landscape) {
-    #button-exit{
+    .botao-sair button{
       left: 10rem;
     }
+  }
+
+  #negative-contrast{
+    font-size: 15px !important;
   }
 
 
@@ -2478,7 +2644,7 @@ body.font-leg button{
 
 }
 
-@media screen and (min-width: 920px) {
+@media screen and (min-width: 920px) and (max-width: 1401px) {
 .messageBoxAccess{
   position: absolute;
   top: 10px;
@@ -2557,7 +2723,7 @@ body.font-leg button{
   background-color: #f1f1f1;  /* Cor de fundo da área da barra de rolagem */
 }
 
-.btn-acessibilidade .btnAccess{
+.btnAccess .botao-menu{
     position: fixed;
     top: 150px;
     width: 50px; 
@@ -2573,16 +2739,6 @@ body.font-leg button{
     transition: .5s;
 }
 
-.botao-menu{
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #007bff;
-  border-radius: 20%;
-  transition: .5s;
-}
 
 .botao-menu:hover{
   transform: scale(1.05);
@@ -2600,7 +2756,7 @@ body.font-leg button{
     background-color: transparent !important;
 }
 
-body.menu-ativado  .btn-acessibilidade .btnAccess{
+body.menu-ativado  .btnAccess .botao-menu{
     position: fixed;
     top: 20px;
     z-index: 11100;
@@ -2610,10 +2766,10 @@ body.menu-ativado .menu-acessibilidade{
     z-index: 10000; 
 }
 
-body.menu-ativado #button-exit{
+body.menu-ativado .botao-sair button{
     position: fixed;
     top: 55px;
-    left: 19.5rem !important;
+    left: 19.5rem;
     width: 30px !important; 
     height: 30px !important;
     padding: 0; 
@@ -2627,7 +2783,7 @@ body.menu-ativado #button-exit{
     color: #007bff;
 }
 
-body.negative-contrast #button-exit{
+body.negative-contrast .botao-sair button{
     color: #e5ff00;
 }
 
