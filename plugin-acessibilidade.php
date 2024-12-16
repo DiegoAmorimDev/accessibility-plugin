@@ -51,9 +51,7 @@ function exibir_plugin_acessibilidade_no_body() {
             <div class="botao-menu" id="botao-menu">
             <button id="btn-acessibilidade" class="btn-acessibilidade"> <i class="bi bi-universal-access-circle"></i> </button>
             </div>
-            <div class="botao-sair">
-               <button id="button-left"> <i class="bi bi-box-arrow-left" id="button-exit"></i> </button> 
-            </div>
+            
         </div>
     
 
