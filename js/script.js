@@ -49,9 +49,17 @@ function toggleNegativeContrast() {
     synth.cancel();
 }
 
-// Função para alternar tons de cinza
 function toggleGrayScale() {
-    document.body.classList.toggle('tons-cinza');
+    // Seleciona todos os elementos da página
+    const allElements = document.querySelectorAll('*');
+
+    allElements.forEach(element => {
+        if (element.style.filter === 'grayscale(100%)') {
+            element.style.filter = ''; // Remove o filtro
+        } else {
+            element.style.filter = 'grayscale(100%)'; // Aplica o filtro
+        }
+    });
     synth.cancel();
 }
 
