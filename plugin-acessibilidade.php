@@ -2,7 +2,7 @@
 /**
  * Plugin Name: UEPA acessível
  * Description: Transformando a UEPA em um espaço inclusivo para todos!.
- * Version: 1.0 BETA
+ * Version: 1.0 
  * Author: <a href="https://dspd.uepa.br" target="_blank">DSPD - UEPA</a>
  */
 
@@ -36,14 +36,7 @@ function plugin_acessibilidade_carregar_bootstrap() {
 add_action('wp_enqueue_scripts', 'plugin_acessibilidade_carregar_bootstrap');
 
 
-// Remover a linha que adiciona o botão no rodapé
-// add_action('wp_footer', 'exibir_plugin_acessibilidade');
 
-// Usar wp_body_open para adicionar o botão corretamente em todas as páginas
-// Remover a linha que adiciona o botão no rodapé
-// add_action('wp_footer', 'exibir_plugin_acessibilidade');
-
-// Usar wp_body_open para adicionar o botão corretamente em todas as páginas
 function exibir_plugin_acessibilidade_no_body() {
     ?>
     
@@ -51,7 +44,9 @@ function exibir_plugin_acessibilidade_no_body() {
             <div class="botao-menu" id="botao-menu">
             <button id="btn-acessibilidade" class="btn-acessibilidade"> <i class="bi bi-universal-access-circle"></i> </button>
             </div>
-            
+            <div class="botao-sair" id="botao-sair">
+                <button id="button-left">  <i class="bi bi-arrow-left-square"></i> </button>
+            </div>
         </div>
     
 
@@ -79,7 +74,7 @@ function exibir_plugin_acessibilidade_no_body() {
                 </div>
                 <div class="bloco-funcoes">
                     <div class="funcoes-box">
-                        <button id="toggleGrayButton" onclick="toggleGrayScale()"> <i id="GrayScale" class="bi bi-upc"></i> Escala de cinza</button>
+                        <button id="toggleGrayButton" onclick="toggleGrayScale()"> <i class="bi bi-lightbulb"></i> Fundo branco</button>
                     </div>
                     <div class="funcoes-box">
                         <button onclick="toggleLinkSub()"> <i class="bi bi-link"></i> Links Sublinhados</button>
@@ -99,12 +94,13 @@ function exibir_plugin_acessibilidade_no_body() {
                 <button class="redefinir-button" onclick="resetConfig()"><i class="bi bi-arrow-clockwise"></i>REDEFINIR CONFIGURAÇÕES</button>
             </div>
 
-            <div class="report-messages">
+            <div class="report-messages" id="report-messages">
             <a href="https://mail.google.com/mail/?view=cm&fs=1&to=suporte@uepa.br&su=Relatar%20um%20Problema&body=Descreva%20seu%20problema%20aqui,%20nossa%20equipe%20fará%20o%20possível%20para%20lhe%20ajudar." target="_blank">Reportar um problema</a>
             </div>
 
             <div class="flex">
-                <a href="https://dspd.uepa.br/" target="_blank"><img id="LOGO-DSPD" src="wp-content/plugins/uepa-acessivel-wp - Copia/img/DSPD-LOGO.png" alt="LOGO-DSPD"></a>
+                <a href="https://dspd.uepa.br/" target="_blank"><img id="LOGO-DSPD" src="<?php echo plugins_url('img/DSPD-LOGO.png', __FILE__); ?>" alt="LOGO DA DSPD">
+                </a>
             </div>
         </div>
     </div>

@@ -35,10 +35,18 @@ document.getElementById('btn-acessibilidade').addEventListener('click', function
     document.body.classList.toggle('menu-ativado');
 });
 
+// Alternar exibição do menu de acessibilidade
+document.getElementById('button-left').addEventListener('click', function () {
+    const menu = document.getElementById('menu-acessibilidade');
+    menu.style.display = (menu.style.display === 'none' || menu.style.display === '') ? 'block' : 'none';
+    document.body.classList.toggle('menu-ativado');
+});
+
 // Função para alternar alto contraste
 function toggleHighContrast() {
     document.body.classList.toggle('high-contrast');
     document.body.classList.remove('negative-contrast');
+    document.body.classList.remove('light-background');
     synth.cancel();
 }
 
@@ -46,20 +54,15 @@ function toggleHighContrast() {
 function toggleNegativeContrast() {
     document.body.classList.toggle('negative-contrast');
     document.body.classList.remove('high-contrast');
+    document.body.classList.remove('light-background');
     synth.cancel();
 }
 
+// Função para alternar tons de cinza
 function toggleGrayScale() {
-    // Seleciona todos os elementos da página
-    const allElements = document.querySelectorAll('*');
-
-    allElements.forEach(element => {
-        if (element.style.filter === 'grayscale(100%)') {
-            element.style.filter = ''; // Remove o filtro
-        } else {
-            element.style.filter = 'grayscale(100%)'; // Aplica o filtro
-        }
-    });
+    document.body.classList.toggle('light-background');
+    document.body.classList.remove('high-contrast');
+    document.body.classList.remove('negative-contrast');
     synth.cancel();
 }
 
@@ -99,7 +102,7 @@ function decreaseFontSize() {
 
 // Função para restaurar configurações iniciais
 function resetConfig() {
-    document.body.classList.remove('font-leg', 'link-sub', 'tons-cinza', 'high-contrast', 'negative-contrast');
+    document.body.classList.remove('font-leg', 'link-sub', 'tons-cinza', 'high-contrast', 'negative-contrast', 'light-background');
 
     // Restaurar tamanhos iniciais das fontes
     Object.values(initialFontSizes).forEach(item => {

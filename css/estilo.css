@@ -2105,24 +2105,46 @@ body.negative-contrast #toggleGrayButton i {
 
 
 
-/* escala de cinza */
 
-body.tons-cinza{
+/* Aplica escala de cinza ao site */
+body.tons-cinza * {
   filter: grayscale(100%);
 }
 
-body.tons-cinza .menu-acessibilidade{
-  position: fixed !important;
+/* Garante que o menu de acessibilidade não seja afetado */
+body.tons-cinza .menu-acessibilidade,
+body.tons-cinza .menu-acessibilidade * {
   filter: none !important;
+  position: relative;
+  z-index: 10001; /* Garantir prioridade visual */
 }
 
-.block #menu-acessibilidade button {
-  display: block
+body.light-background,
+body.light-background *:not(#menu-acessibilidade):not(#btnAccess):not(#botao-menu):not(#botao-sair):not(#btn-acessibilidade i):not(#button-left) {
+  background: #fff !important;
+  color: #000 !important;
+}
+body.light-background div#gmap,
+body.light-background div#gmap * {
+  background: initial !important;
 }
 
-#GrayScale{
-  color: black;
+body.light-background button{
+  border: 1px solid #000000 !important;
 }
+
+body.light-background .botao-menu button{
+  background-color: rgb(255, 255, 255) !important;
+  color: white;
+  border: 1px solid;
+  border-color: #000000;
+}
+
+
+body.light-background .menu-acessibilidade{
+  background-color: white;
+}
+
 
 
 
